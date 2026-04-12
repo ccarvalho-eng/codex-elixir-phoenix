@@ -72,8 +72,8 @@ good_code()
 
 How would you like to proceed?
 
-- `/phx:plan` — Replan the fixes (for complex/architectural issues)
-- `/phx:work` — Fix directly (for simple, clear fixes)
+- `$elixir-phoenix-plan` — Replan the fixes (for complex/architectural issues)
+- `$elixir-phoenix-work` — Fix directly (for simple, clear fixes)
 - I'll handle it myself
 
 ```
@@ -111,4 +111,4 @@ Every review MUST end with this at-a-glance table (even if only 1 finding):
 
 **IMPORTANT**: The review template does NOT include task lists (`- [ ]`),
 fix phases, or plan modifications. Review is findings-only. Task creation
-belongs in `/phx:plan`.
+belongs in `$elixir-phoenix-plan`.

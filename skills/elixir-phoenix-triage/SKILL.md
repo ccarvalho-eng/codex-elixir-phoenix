@@ -1,10 +1,10 @@
 ---
 name: elixir-phoenix-triage
 description: 'Elixir/Phoenix: Triage review findings interactively — approve, skip,
-  or prioritize each issue. Use after /phx:review to filter findings before fixing.'
+  or prioritize each issue. Use after $elixir-phoenix-review to filter findings before fixing.'
 metadata:
   short-description: 'Elixir/Phoenix: Triage review findings interactively — approve,
-    skip, or prioritize each issue. Use after /phx:review to filter findings before
+    skip, or prioritize each issue. Use after $elixir-phoenix-review to filter findings before
     fixing.'
 ---
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Triage"
-  short_description: "Elixir/Phoenix: Triage review findings interactively — approve, skip, or prioritize each issue. Use after /phx:review to filter findings before fixing."
+  short_description: "Elixir/Phoenix: Triage review findings interactively — approve, skip, or prioritize each issue. Use after $elixir-phoenix-review to filter findings before fixing."
   default_prompt: "Use $elixir-phoenix-triage for this Elixir/Phoenix task."

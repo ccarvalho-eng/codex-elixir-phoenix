@@ -16,7 +16,7 @@ When resuming an interrupted workflow:
 Example resume:
 
 ```bash
-/phx:full --resume magic-link-auth
+$elixir-phoenix-full --resume magic-link-auth
 # Reads .codex/plans/magic-link-auth/plan.md
 # Finds first unchecked task: P2-T3
 # Resumes from P2-T3
@@ -25,7 +25,7 @@ Example resume:
 Or resume from specific task:
 
 ```bash
-/phx:work .codex/plans/magic-link-auth/plan.md --from P2-T3
+$elixir-phoenix-work .codex/plans/magic-link-auth/plan.md --from P2-T3
 ```
 
 ## Ralph Wiggum Integration
@@ -33,7 +33,7 @@ Or resume from specific task:
 For fully autonomous execution, use with Ralph Wiggum Loop:
 
 ```bash
-/ralph-loop:ralph-loop "/phx:full {feature}" --completion-promise "DONE" --max-iterations 50
+/ralph-loop:ralph-loop "$elixir-phoenix-full {feature}" --completion-promise "DONE" --max-iterations 50
 ```
 
 This enables:
@@ -57,8 +57,8 @@ The cycle stops automatically when:
 Optional checkpoints for human review:
 
 ```
-/phx:full {feature} --checkpoint-after plan
-/phx:full {feature} --checkpoint-after each-phase
+$elixir-phoenix-full {feature} --checkpoint-after plan
+$elixir-phoenix-full {feature} --checkpoint-after each-phase
 ```
 
 ## Rollback Points
@@ -99,5 +99,5 @@ TOTAL=$(grep -c '\[.*\] \[P' .codex/plans/${SLUG}/plan.md)
 echo "Progress: $COMPLETED / $TOTAL tasks complete"
 
 # Resume from first unchecked task
-/phx:work .codex/plans/${SLUG}/plan.md
+$elixir-phoenix-work .codex/plans/${SLUG}/plan.md
 ```

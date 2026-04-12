@@ -18,7 +18,7 @@ Each documented solution reduces future debugging time. After
 #### From Arguments
 
 ```
-/phx:compound Fixed N+1 query in UserListLive — was missing preload on posts
+$elixir-phoenix-compound Fixed N+1 query in UserListLive — was missing preload on posts
 ```
 
 Extract: module=UserListLive, symptom=N+1, root_cause=missing preload
@@ -122,7 +122,7 @@ If the solution matches any of these, suggest promotion:
 
 ## Integration with Other Skills
 
-- `/phx:learn-from-fix` captures quick patterns in `common-mistakes.md`
-- `/phx:compound` captures detailed solutions with full context
-- `/phx:investigate` searches `.codex/solutions/` before investigating
-- `/phx:plan` consults for known risks in planned areas
+- `$elixir-phoenix-learn-from-fix` captures quick patterns in `common-mistakes.md`
+- `$elixir-phoenix-compound` captures detailed solutions with full context
+- `$elixir-phoenix-investigate` searches `.codex/solutions/` before investigating
+- `$elixir-phoenix-plan` consults for known risks in planned areas

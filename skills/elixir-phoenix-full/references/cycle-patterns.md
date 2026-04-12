@@ -76,7 +76,7 @@ Resume feature development:
 - Current task: 3/4
 - Last error: {error from progress file}
 
-Continue with /phx:work .codex/plans/{slug}/plan.md
+Continue with $elixir-phoenix-work .codex/plans/{slug}/plan.md
 ```
 
 ### Session Restart
@@ -91,7 +91,7 @@ ls -t .codex/plans/*/progress.md | head -1
 grep "State:" .codex/plans/*/progress.md | head -1
 
 # Resume
-/phx:work .codex/plans/{slug}/plan.md
+$elixir-phoenix-work .codex/plans/{slug}/plan.md
 ```
 
 ### Blocker Recovery
@@ -101,7 +101,7 @@ When human resolves a blocker:
 ```bash
 # Mark blocker resolved in progress file
 # Then resume
-/phx:work .codex/plans/{slug}/plan.md --from {task-id}
+$elixir-phoenix-work .codex/plans/{slug}/plan.md --from {task-id}
 ```
 
 ## Cycle Optimization

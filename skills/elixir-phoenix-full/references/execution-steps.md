@@ -1,6 +1,6 @@
 # Full Cycle Execution Steps
 
-Detailed step-by-step execution for `/phx:full`.
+Detailed step-by-step execution for `$elixir-phoenix-full`.
 
 ## Step 1: Initialize
 
@@ -56,7 +56,7 @@ git checkout -b feature/$FEATURE_SLUG
 
 ## Step 3: Plan Phase
 
-Run `/phx:plan {feature}` (with `--detail comprehensive` for "research it"):
+Run `$elixir-phoenix-plan {feature}` (with `--detail comprehensive` for "research it"):
 
 - Spawn research agents (1-2 for standard, 4+ for comprehensive)
 - Create phased implementation plan
@@ -66,7 +66,7 @@ Run `/phx:plan {feature}` (with `--detail comprehensive` for "research it"):
 
 ## Step 4: Work Phase (Loop)
 
-Run `/phx:work .codex/plans/{feature}/plan.md`:
+Run `$elixir-phoenix-work .codex/plans/{feature}/plan.md`:
 
 ```
 WHILE unchecked tasks exist:
@@ -83,7 +83,7 @@ WHILE unchecked tasks exist:
 
 ## Step 5: Review Phase
 
-Run `/phx:review`:
+Run `$elixir-phoenix-review`:
 
 Spawn 4 parallel review agents:
 
@@ -133,8 +133,8 @@ Append metrics to progress file:
 
 Auto-suggest optional follow-ups:
 
-- `/phx:document` for documentation generation
-- `/phx:learn-from-fix` to capture lessons learned
+- `$elixir-phoenix-document` for documentation generation
+- `$elixir-phoenix-learn-from-fix` to capture lessons learned
 
 Then output completion:
 

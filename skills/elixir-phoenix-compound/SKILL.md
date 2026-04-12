@@ -1,11 +1,11 @@
 ---
 name: elixir-phoenix-compound
 description: 'Elixir/Phoenix: Capture solved problems as searchable solution docs.
-  Use after fixing bugs, when "that worked", or after successful /phx:review or /phx:investigate.'
+  Use after fixing bugs, when "that worked", or after successful $elixir-phoenix-review or $elixir-phoenix-investigate.'
 metadata:
   short-description: 'Elixir/Phoenix: Capture solved problems as searchable solution
-    docs. Use after fixing bugs, when "that worked", or after successful /phx:review
-    or /phx:investigate.'
+    docs. Use after fixing bugs, when "that worked", or after successful $elixir-phoenix-review
+    or $elixir-phoenix-investigate.'
 ---
 
 # Codex Port Notes
