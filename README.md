@@ -4,6 +4,14 @@ Portable Elixir and Phoenix skills for Codex.
 
 This repo packages the custom skills from my local Codex setup in a layout that can be cloned and installed into another machine's `~/.codex/skills` directory.
 
+## Credit
+
+This project is heavily inspired by Oliver Kriska's Claude-focused Elixir/Phoenix plugin:
+
+- https://github.com/oliver-kriska/claude-elixir-phoenix
+
+This repo adapts that direction for a Codex-oriented skills setup. It is not an official fork, and Claude-specific orchestration details are only imported here as reference material unless explicitly ported.
+
 ## What is included
 
 - 42 Elixir/Phoenix-oriented skills under `skills/`
