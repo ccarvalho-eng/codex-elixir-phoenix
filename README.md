@@ -10,7 +10,7 @@ This project is heavily inspired by Oliver Kriska's Claude-focused Elixir/Phoeni
 
 - https://github.com/oliver-kriska/claude-elixir-phoenix
 
-This repo adapts that direction for a Codex-oriented skills setup. It is not an official fork, and Claude-specific orchestration details are only imported here as reference material unless explicitly ported.
+This repo adapts that direction for a Codex-oriented skills setup. It is not an official fork.
 
 ## What is included
 
@@ -28,7 +28,7 @@ This repo adapts that direction for a Codex-oriented skills setup. It is not an 
 Clone the repo anywhere:
 
 ```bash
-git clone https://github.com/YOUR-ORG/codex-elixir-phoenix.git
+git clone https://github.com/ccarvalho-eng/codex-elixir-phoenix.git
 cd codex-elixir-phoenix
 ./install.sh
 ```
