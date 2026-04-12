@@ -1,0 +1,118 @@
+---
+name: elixir-phoenix-intent-detection
+description: 'Elixir/Phoenix: Route ambiguous work requests to the correct /phx: workflow.
+  Use when intent is unclear, mixed (bug + refactor), or user asks "how to approach
+  this".'
+metadata:
+  short-description: 'Elixir/Phoenix: Route ambiguous work requests to the correct
+    /phx: workflow. Use when intent is unclear, mixed (bug + refactor), or user asks
+    "how to approach this".'
+---
+
+# Codex Port Notes
+
+- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
+- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
+- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
+- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
+- Use `.codex/` for workflow artifacts mentioned by the original instructions.
+- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
+
+# Intent Detection — Workflow Routing
+
+When user describes work WITHOUT specifying a `/phx:` command, analyze their intent and suggest the appropriate workflow BEFORE starting work.
+
+## Routing Table
+
+| Signal | Detected Intent | Suggest |
+|--------|----------------|---------|
+| "bug", "error", "crash", "failing", "broken", stack trace | Bug investigation | ``elixir-phoenix-investigate`` |
+| "brainstorm", "explore idea", "not sure what I need", "vague idea", "let's discuss", "how to approach" | Ideation/requirements | ``elixir-phoenix-brainstorm`` |
+| "add", "implement", "build", "create" + multi-step | New feature | ``elixir-phoenix-plan`` |
+| "review", "check", "audit" code | Code review | ``elixir-phoenix-review`` |
+| "fix" + small/specific scope | Quick fix | handle directly or ``elixir-phoenix-quick`` |
+| "refactor", "clean up", "improve" | Refactoring | ``elixir-phoenix-plan`` (needs scope) |
+| "research", "how to", "what's the best" | Research | ``elixir-phoenix-research`` |
+| "evaluate", "compare", "adopt", "library", "should we use" | Library evaluation | ``elixir-phoenix-research` --library` |
+| "test", "spec", "coverage" | Testing | handle directly or ``elixir-phoenix-plan`` |
+| Describes 1-2 file changes, < 50 lines | Small task | handle directly |
+| "deploy", "release", "production" | Deployment | ``elixir-phoenix-verify`` then deploy |
+| "performance", "slow", "N+1", "memory" | Performance | ``elixir-phoenix-perf`` |
+| "PR review", "review comments", "address feedback", "respond to PR" | PR response | ``elixir-phoenix-pr-review`` |
+| "that worked", "fixed it", "problem solved" | Knowledge capture | ``elixir-phoenix-compound`` |
+| "enhance plan", "more detail", "deepen" | Plan enhancement | ``elixir-phoenix-plan` --existing` |
+| "triage", "which findings", "prioritize fixes" | Finding triage | ``elixir-phoenix-triage`` |
+
+## Behavior
+
+1. Read user's first message
+2. Match against routing table (use keyword + context signals, not exact match)
+3. If match found with multi-step workflow: "This looks like [intent]. I'd suggest `[command]` — want me to run it, or should I just dive in?"
+4. If trivial task (typo, single-line fix, config change): skip suggestion, just do it
+5. If user already specified a `/phx:` command: follow it, don't re-suggest
+6. **NEVER block the user** — suggestion only, not mandatory
+
+## Confidence Signals
+
+High confidence (suggest immediately):
+
+- Stack trace or error message pasted → ``elixir-phoenix-investigate``
+- "Add [feature] with [multiple components]" → ``elixir-phoenix-plan``
+- "Review my changes" or "check this PR" → ``elixir-phoenix-review``
+
+Medium confidence (suggest with caveat):
+
+- "Fix [thing]" — could be quick or complex, suggest based on scope description
+- "Update [thing]" — could be small edit or refactor
+
+Low confidence (just do it):
+
+- Single file mentioned, clear change
+- "Change X to Y"
+- Configuration or dependency updates
+
+## Complexity Signals
+
+When a task matches a workflow command, check complexity before suggesting:
+
+**Trivial signals** (suggest ``elixir-phoenix-quick`` or handle directly):
+
+- Single file mentioned explicitly
+- "exclude X from Y", "add X to config", "rename", "change X to Y"
+- Problem + solution both stated ("X is wrong, change to Y")
+- One-line fix described
+
+**Complex signals** (suggest ``elixir-phoenix-plan`` or ``elixir-phoenix-investigate``):
+
+- 3+ modules or files mentioned
+- "intermittent", "race condition", "sometimes", "random"
+- Stack trace with 5+ frames
+- "across", "all", "every" (scope indicators)
+
+**Override rule**: If user invokes ``elixir-phoenix-full`` but task matches trivial signals:
+"This looks like a quick fix. Want ``elixir-phoenix-quick`` instead, or stick with the full cycle?"
+
+## Iron Laws
+
+1. **NEVER block on suggestion** — If user starts explaining, just do the work
+2. **One suggestion max** — Don't re-suggest if user ignores first suggestion
+3. **Commands are shortcuts, not gates** — All work can be done without commands
+
+## Routing Logic Example
+
+```
+if has_slash_command($ARGUMENTS) -> follow command directly
+elif has_stack_trace(message) -> suggest `elixir-phoenix-investigate`
+elif matches("add|build|implement", message) and multi_step -> suggest `elixir-phoenix-plan`
+elif matches("fix", message) and small_scope -> handle directly or `elixir-phoenix-quick`
+elif matches("review|audit", message) -> suggest `elixir-phoenix-review`
+else -> handle directly (no suggestion)
+```
+
+## Integration
+
+This skill is consulted at session start. It works alongside:
+
+- SessionStart hook (shows plugin loaded message)
+- CLAUDE.md routing instructions (passive reference)
+- Individual workflow skills (activated by commands)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorm"
+  short_description: "Brainstorm Elixir/Phoenix features — explore ideas, compare approaches, gather requirements. Use when vague idea, not sure how to approach, or want to discuss before plan."
+  default_prompt: "Use $elixir-phoenix-brainstorm for this Elixir/Phoenix task."

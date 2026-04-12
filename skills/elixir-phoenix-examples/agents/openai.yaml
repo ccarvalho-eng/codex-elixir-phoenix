@@ -1,0 +1,4 @@
+interface:
+  display_name: "Examples"
+  short_description: "Provide examples and walkthroughs for Phoenix, LiveView, Ecto, OTP patterns. Use when \"how do I...\", \"show me an example\", or \"what does X look like\"."
+  default_prompt: "Use $elixir-phoenix-examples for this Elixir/Phoenix task."

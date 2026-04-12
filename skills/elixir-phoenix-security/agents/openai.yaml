@@ -1,0 +1,4 @@
+interface:
+  display_name: "Security"
+  short_description: "Enforce Elixir/Phoenix security — auth, OAuth, sessions, CSRF, XSS, SQL injection, input validation, secrets. Use when editing auth files, login flows, RBAC, or API keys."
+  default_prompt: "Use $elixir-phoenix-security for this Elixir/Phoenix task."

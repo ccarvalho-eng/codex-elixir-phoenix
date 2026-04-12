@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brief"
+  short_description: "Elixir/Phoenix: Interactive briefing of a plan file — explains reasoning, schema decisions, component choices. Use when developers need to understand a plan before approving."
+  default_prompt: "Use $elixir-phoenix-brief for this Elixir/Phoenix task."

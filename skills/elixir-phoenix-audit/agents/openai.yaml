@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit"
+  short_description: "Elixir/Phoenix: Project health audit and health check — architecture, performance, security, tests, dependencies. Use quarterly, before releases, after refactors, or when asked about project health."
+  default_prompt: "Use $elixir-phoenix-audit for this Elixir/Phoenix task."

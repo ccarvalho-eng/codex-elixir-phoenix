@@ -1,0 +1,4 @@
+interface:
+  display_name: "Techdebt"
+  short_description: "Analyze Elixir/Phoenix technical debt — duplicates, refactoring opportunities, credo issues. Use when asked about code quality, cleanup, or what to improve."
+  default_prompt: "Use $elixir-phoenix-techdebt for this Elixir/Phoenix task."

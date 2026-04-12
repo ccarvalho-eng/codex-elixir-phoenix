@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compound"
+  short_description: "Elixir/Phoenix: Capture solved problems as searchable solution docs. Use after fixing bugs, when \"that worked\", or after successful /phx:review or /phx:investigate."
+  default_prompt: "Use $elixir-phoenix-compound for this Elixir/Phoenix task."

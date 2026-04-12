@@ -1,0 +1,4 @@
+interface:
+  display_name: "Liveview Patterns"
+  short_description: "Elixir/Phoenix: LiveView patterns — PubSub, uploads, components, forms, assign_async, streams. Use when building LiveView features or debugging handle_event lifecycle."
+  default_prompt: "Use $elixir-phoenix-liveview-patterns for this Elixir/Phoenix task."

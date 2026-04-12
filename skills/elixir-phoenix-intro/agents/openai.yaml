@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intro"
+  short_description: "Walk through the Elixir/Phoenix plugin commands, workflow, and features in 6 interactive sections. Use when a new user wants to learn what the plugin offers or needs a refresher on available commands."
+  default_prompt: "Use $elixir-phoenix-intro for this Elixir/Phoenix task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hexdocs Fetcher"
+  short_description: "Fetch HexDocs for Elixir libraries with HTML-to-markdown conversion. Use when looking up docs on hexdocs.pm — modules, functions, guides, changelogs."
+  default_prompt: "Use $elixir-phoenix-hexdocs-fetcher for this Elixir/Phoenix task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pr Review"
+  short_description: "Address PR review comments on Elixir/Phoenix code — fetch comments, draft responses, optionally fix code. Use when the user shares a PR URL or mentions reviewer feedback."
+  default_prompt: "Use $elixir-phoenix-pr-review for this Elixir/Phoenix task."

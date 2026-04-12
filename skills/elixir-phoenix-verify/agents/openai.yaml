@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify"
+  short_description: "Verify Elixir/Phoenix changes — compile, format, and test in one loop. Use after implementation, before PRs, or after fixing bugs."
+  default_prompt: "Use $elixir-phoenix-verify for this Elixir/Phoenix task."

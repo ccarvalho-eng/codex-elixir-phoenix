@@ -1,0 +1,154 @@
+---
+name: elixir-phoenix-plan
+description: Plan multi-step Phoenix features with specialist agents. Use when building
+  new domains, multi-file features, or creating plans from review findings. Use --existing
+  to enhance a plan.
+metadata:
+  short-description: Plan multi-step Phoenix features with specialist agents. Use
+    when building new domains, multi-file features, or creating plans from review
+    findings. Use --existing to enhance a plan.
+---
+
+# Codex Port Notes
+
+- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
+- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
+- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
+- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
+- Use `.codex/` for workflow artifacts mentioned by the original instructions.
+- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
+
+# Plan Elixir/Phoenix Feature
+
+Plan a feature by spawning Elixir specialist agents, then output
+structured plan with checkboxes.
+
+## What Makes `elixir-phoenix-plan` Different from the generic plan flow
+
+1. Keeps Elixir/Phoenix-specific research and task routing in view
+2. Plans with `[ecto]`, `[liveview]`, `[oban]` task routing
+3. Checks for Iron Law compliance in the plan
+4. Includes `mix compile/format/credo/test` verification
+5. Understands Phoenix context boundaries
+
+## Usage
+
+```
+`elixir-phoenix-plan` Add user avatars with S3 upload
+`elixir-phoenix-plan` .codex/plans/notifications/reviews/notifications-review.md
+`elixir-phoenix-plan` Implement notifications --depth deep
+`elixir-phoenix-plan` .codex/plans/auth/plan.md --existing
+```
+
+## Arguments
+
+- `$ARGUMENTS` = Feature description, review file, or existing plan
+- `--depth quick|standard|deep` = Planning depth (auto-detected)
+- `--existing` = Enhance an existing plan with deeper research
+
+## Workflow
+
+1. **Gather context** — File path (skip to agents), brainstorm
+   interview.md (skip clarification), clear description, or vague
+2. **Clarify if vague** — Ask questions ONE at a time (skip if
+   brainstorm interview.md exists with Status: COMPLETE)
+3. **Detect depth** — Auto-detect quick/standard/deep
+4. **Runtime context** (Tidewave) — Gather live schemas, routes,
+   and warnings before spawning agents (see planning-orchestrator)
+5. **Spawn research agents** — Selective, parallel, based on need.
+   Create a Codex task per agent for progress visibility:
+   `update_plan({subject: "{Agent} research", activeForm: "Researching..."})`,
+   mark `in_progress` on spawn, `completed` when done
+6. **Wait for ALL agents** — Do NOT proceed until all return
+   "completed". NEVER write plan while any agent is still running
+7. **Breadboard** (LiveView) — System map for multi-page features
+8. **Completeness check** — MANDATORY when planning from review
+9. **Split decision** — One plan or multiple, concrete options
+10. **Generate plan** — Checkboxes, phased tasks, code patterns.
+    Also create `plans/{slug}/scratchpad.md` for decisions and dead-ends
+11. **Self-check** (deep only) — Three questions in Risks section
+12. **Present and ask** — STOP, show summary, let user decide
+
+**When planning from review**: Every finding must appear in the
+plan — either as a task OR explicitly deferred by the user.
+
+See `references/planning-workflow.md` for detailed step-by-step.
+
+### --existing Mode (Deepening)
+
+Enhances an existing plan instead of creating a new one:
+
+1. Load plan, search `.codex/solutions/` for known risks
+2. Spawn SPECIALIST agents (not Explore) for thin sections.
+   Each agent writes to `.codex/plans/{slug}/research/` and
+   returns only a 500-word summary. Same agent selection rules
+3. Wait for ALL agents (mark tasks `completed` as each finishes)
+4. Add implementation detail, resolve spikes, add verification
+5. Present diff summary — **NEVER delete existing tasks**
+
+## Iron Laws
+
+1. **NEVER auto-start `elixir-phoenix-work`** — Always present plan and ask
+2. **Research before assuming** — Web-search unfamiliar tech
+3. **Spawn agents selectively** — Only relevant, not all
+4. **NEVER write plan while agents still running**
+5. **NEVER skip input findings** — Every finding MUST have a task
+6. **Do NOT spawn hex-library-researcher for existing deps**
+7. **Skip research when planning from review/investigation** — When
+   input is a review file or ``elixir-phoenix-investigate`` output, the findings
+   ARE the research. Do NOT spawn agents to re-discover what the
+   review already found. Convert findings directly to plan tasks.
+   (Confirmed: 56-session analysis showed same findings discovered
+   3-4x across review→investigate→plan phases, wasting ~96K tokens)
+
+## Integration with Workflow
+
+```text
+`elixir-phoenix-plan` {feature}  <-- YOU ARE HERE
+       |
+   `elixir-phoenix-plan` --existing (optional enhancement)
+       |
+   ASK USER -> `elixir-phoenix-work` .codex/plans/{feature}/plan.md
+       |
+`elixir-phoenix-review` → `elixir-phoenix-compound`
+```
+
+## Notes
+
+- Plans saved to `.codex/plans/{slug}/plan.md`
+- Research reports in `.codex/plans/{slug}/research/` can be deleted after
+
+## CRITICAL: After Writing the Plan
+
+**STOP. Do NOT proceed to implementation.**
+
+After writing `.codex/plans/{slug}/plan.md`:
+
+1. Summarize: task count, phases, key decisions
+2. Use `ask the user directly` with options:
+   - "Start in fresh session" (recommended for 5+ tasks)
+   - "Get a briefing" (``elixir-phoenix-brief`` — interactive walkthrough)
+   - "Start here"
+   - "Review the plan"
+   - "Adjust the plan"
+3. Wait for user response. Never auto-start work.
+
+**When user selects "Start in fresh session"**, print:
+
+```
+1. Run `/new` to start a fresh session
+2. Then run one of:
+   `elixir-phoenix-work` .codex/plans/{slug}/plan.md
+   `elixir-phoenix-full` .codex/plans/{slug}/plan.md  (includes review + compound)
+```
+
+This is Iron Law #1. Violating it wastes user context.
+
+## References (DO NOT read — for human reference only)
+
+- `references/planning-workflow.md` — Detailed step-by-step
+- `references/plan-template.md`
+- `references/complexity-detail.md`
+- `references/example-plan.md`
+- `references/agent-selection.md`
+- `references/breadboarding.md`

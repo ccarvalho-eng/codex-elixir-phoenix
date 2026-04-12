@@ -1,0 +1,4 @@
+interface:
+  display_name: "Permissions"
+  short_description: "Recommend safe Bash permissions for Elixir mix commands in settings.json. Use when permission prompts slow workflow, \"fix permissions\", \"reduce prompts\", \"auto-allow mix\"."
+  default_prompt: "Use $elixir-phoenix-permissions for this Elixir/Phoenix task."
