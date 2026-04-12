@@ -50,9 +50,3 @@ Pull the latest repo changes, then run:
 ```bash
 ./install.sh
 ```
-
-## Notes
-
-- Some skills intentionally refer to paths like `~/.codex/...` because they are meant to run inside a Codex home directory
-- If you publish this repo, review the skill contents for any local assumptions before pushing
-- If you want Codex to surface the skills in a specific curated order, add that separately through your own Codex plugin or marketplace metadata
