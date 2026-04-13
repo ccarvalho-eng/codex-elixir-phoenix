@@ -1,26 +1,17 @@
 ---
 name: elixir-phoenix-init
 description: 'Elixir/Phoenix: Initialize plugin in a project — install Iron Laws,
-  auto-activation rules, and reference auto-loading into CLAUDE.md. Use when setting
+  auto-activation rules, and reference auto-loading into AGENTS.md. Use when setting
   up or updating the plugin.'
 metadata:
   short-description: 'Elixir/Phoenix: Initialize plugin in a project — install Iron
-    Laws, auto-activation rules, and reference auto-loading into CLAUDE.md. Use when
+    Laws, auto-activation rules, and reference auto-loading into AGENTS.md. Use when
     setting up or updating the plugin.'
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Plugin Initialization
 
-Install the Elixir/Phoenix plugin's behavioral instructions into the project's CLAUDE.md.
+Install the Elixir/Phoenix plugin's behavioral instructions into the project's AGENTS.md.
 
 ## Usage
 
@@ -31,34 +22,35 @@ Install the Elixir/Phoenix plugin's behavioral instructions into the project's C
 
 ## Iron Laws
 
-1. **NEVER overwrite content outside plugin markers** — User-written CLAUDE.md rules must be preserved verbatim
+1. **NEVER overwrite content outside plugin markers** — User-written AGENTS.md rules must be preserved verbatim
 2. **Always detect stack before generating** — Never assume Phoenix/Ecto versions
 3. **Always validate after installation** — Verify markers present and stack correct
 
 ## Workflow
 
-### Step 1: Check Existing CLAUDE.md
+### Step 1: Check Existing AGENTS.md
 
-Use Glob to check if `CLAUDE.md` exists. Then use Grep to check for existing `ELIXIR-PHOENIX-PLUGIN:START` marker in `CLAUDE.md`.
+Check whether `AGENTS.md` exists, then search it for an existing
+`ELIXIR-PHOENIX-PLUGIN:START` marker.
 
 ### Step 2: Detect Project Stack
 
 Scan the project to customize the injected instructions:
 
-Read `mix.exs` and use Grep to extract:
+Read `mix.exs` and extract:
 
 - Phoenix version: search for `phoenix.*"~>` in `mix.exs`
 - Ecto version: search for `ecto.*"~>` in `mix.exs`
 - Oban: search for `"oban"` and `"oban_pro"` in `mix.exs`
 - Frameworks: search for `"ash"`, `"surface"` in `mix.exs`
 - Tidewave: search for `"tidewave"` in `mix.exs`
-- Project size: use Glob to count `lib/**/*.ex` files
+- Project size: count `lib/**/*.ex` files
 
 ### Step 3: Handle Installation Modes
 
-**Mode A: Fresh Install** (no CLAUDE.md or no markers)
+**Mode A: Fresh Install** (no AGENTS.md or no markers)
 
-1. Create/append to CLAUDE.md
+1. Create/append to AGENTS.md
 2. Insert full behavioral instructions between markers
 3. Include only relevant sections based on detected stack
 
@@ -68,11 +60,11 @@ Read `mix.exs` and use Grep to extract:
 2. Replace with latest behavioral instructions
 3. Preserve everything outside the markers
 
-**CRITICAL: NEVER overwrite or delete existing CLAUDE.md content outside the plugin markers** — user-written rules, project conventions, and other plugin sections must be preserved verbatim
+**CRITICAL: NEVER overwrite or delete existing AGENTS.md content outside the plugin markers** — user-written rules, project conventions, and other plugin sections must be preserved verbatim
 
 ### Step 4: Generate Content
 
-Write the following structure to CLAUDE.md:
+Write the following structure to AGENTS.md:
 
 ```markdown
 <!-- ELIXIR-PHOENIX-PLUGIN:START -->
@@ -97,7 +89,7 @@ Detected stack:
 - {Tidewave ✓ | Tidewave not detected}
 - {Ash Framework detected - Ecto patterns disabled | not detected}
 
-Added to CLAUDE.md:
+Added to AGENTS.md:
 - Auto-activation rules (complexity detection, interview mode)
 - Agent trigger patterns ({n} agents available)
 - Reference auto-loading ({n} reference docs)
@@ -139,7 +131,7 @@ See `references/injectable-template.md` for full template with all placeholders 
 
 After running ``elixir-phoenix-init``:
 
-1. Check CLAUDE.md contains markers
+1. Check AGENTS.md contains markers
 2. Verify detected stack matches actual project
 3. New session should:
    - Auto-detect complexity when given tasks
@@ -150,7 +142,7 @@ After running ``elixir-phoenix-init``:
 
 | Scenario | Action |
 |----------|--------|
-| CLAUDE.md read-only | Error: "Cannot modify CLAUDE.md - check permissions" |
+| AGENTS.md read-only | Error: "Cannot modify AGENTS.md - check permissions" |
 | Markers corrupted | Warn, offer to remove and reinstall |
 | Unknown Phoenix version | Use conservative defaults (all features enabled) |
 | Not an Elixir project | Error: "No mix.exs found - is this an Elixir project?" |

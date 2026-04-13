@@ -9,15 +9,6 @@ metadata:
     before committing.'
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Review Elixir/Phoenix Code
 
 Review code by spawning parallel specialist agents. Find and
@@ -89,7 +80,8 @@ based on the diff, then spawn selected agents in ONE message (parallel):**
 **Agent count**: Min 1, max 5. For <200 lines changed: spawn only
 elixir-reviewer + security-analyzer (if auth files). Log selection
 rationale in review output.
-Spawn with `mode: "bypassPermissions"` and `fork_context: true`.
+Spawn using default `spawn_agent` settings in this environment (set `agent_type`,
+leave other options unset unless the task explicitly requires additional context).
 
 **For focused reviews — spawn the specified agent only:**
 

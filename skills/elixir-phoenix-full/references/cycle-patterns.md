@@ -61,7 +61,7 @@
 
 ### Context Window Reset
 
-When context window fills, Claude loses memory. Recovery:
+When context window fills, Codex loses memory. Recovery:
 
 1. **Read progress file** to restore state
 2. **Read plan file** to find current task

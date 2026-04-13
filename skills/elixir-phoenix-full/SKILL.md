@@ -11,15 +11,6 @@ metadata:
     Iron Laws enforcement.'
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Full Phoenix Feature Development
 
 Execute complete Elixir/Phoenix feature development autonomously: research patterns,
@@ -77,14 +68,13 @@ Save state in `.codex/plans/{slug}/progress.md` AND via Codex
 tasks. Create one task per phase at start, mark `in_progress` on
 entry and `completed` on exit:
 
-```
-update_plan({subject: "Discover & assess complexity", activeForm: "Discovering..."})
-update_plan({subject: "Plan feature", activeForm: "Planning..."})
-update_plan({subject: "Implement tasks", activeForm: "Working..."})
-update_plan({subject: "Verify implementation", activeForm: "Verifying..."})
-update_plan({subject: "Review with specialists", activeForm: "Reviewing..."})
-update_plan({subject: "Capture solutions", activeForm: "Compounding..."})
-```
+Create one progress task per phase with these titles and active texts:
+- `Discover & assess complexity` -> `Discovering...`
+- `Plan feature` -> `Planning...`
+- `Implement tasks` -> `Working...`
+- `Verify implementation` -> `Verifying...`
+- `Review with specialists` -> `Reviewing...`
+- `Capture solutions` -> `Compounding...`
 
 Set up `blockedBy` dependencies between phases (sequential).
 

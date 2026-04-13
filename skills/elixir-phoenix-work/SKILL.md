@@ -9,15 +9,6 @@ metadata:
     after each step, or --continue to resume interrupted work.
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Work
 
 Execute tasks from a plan file with checkpoint tracking and verification.
@@ -91,14 +82,10 @@ Find first unchecked task by `[Pn-Tm]` ID.
 **Create Codex tasks** from ALL unchecked plan items using
 `update_plan`. This gives real-time progress visibility in the UI:
 
-```
-For each unchecked `- [ ] [Pn-Tm] Description`:
-  update_plan({
-    subject: "[Pn-Tm] Description",
-    description: "Full task details from plan",
-    activeForm: "Implementing: Description"
-  })
-```
+For each unchecked `- [ ] [Pn-Tm] Description`, create a progress task with:
+- title: `[Pn-Tm] Description`
+- description: full task details from the plan
+- active status text: `Implementing: Description`
 
 Skip already-checked items (`[x]`) — don't create tasks for them.
 Set up `blockedBy` dependencies between phases (Phase 2 tasks
@@ -112,14 +99,13 @@ See `references/resume-strategies.md` for all resume modes.
 
 Execute each unchecked task (`- [ ] [Pn-Tm][agent] Description`):
 
-1. **Start task**: `update_plan({taskId, status: "in_progress"})`
+1. **Start task**: mark the task as in progress in the progress tracker
 2. **Route** by `[agent]` annotation (see `references/execution-guide.md`)
 3. **Implement** the task
 4. **Verify**: `mix format` + `mix compile --warnings-as-errors`
    (at phase end, also run `mix test <affected>` — see tiers below)
 5. **Complete task**: Mark checkbox `[x]` on pass, **append
-   implementation note** inline, AND
-   `update_plan({taskId, status: "completed"})`. Example:
+   implementation note** inline, and mark the task completed in the progress tracker. Example:
    `- [x] [P1-T3] Add user schema — citext for email, composite index on [user_id, status]`
    This survives context compaction; the plan is re-read on resume.
 6. **On failure**: retry up to 3 times, then create BLOCKER
@@ -178,7 +164,7 @@ Include context beyond checkboxes for fresh session resume.
 
 Check for other pending plans after completion:
 
-Use Glob to find other plan files matching `.codex/plans/*/plan.md`.
+Search for other plan files matching `.codex/plans/*/plan.md`.
 
 If pending plans exist, inform the user. Do NOT auto-start.
 

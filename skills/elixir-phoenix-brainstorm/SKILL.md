@@ -9,15 +9,6 @@ metadata:
     discuss before plan.
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Brainstorm — Adaptive Requirements Gathering
 
 Interactive interview → research → synthesis loop. Produces structured
@@ -103,8 +94,7 @@ Never let the conversation flow past this point without a formal choice.
 
 ## Phase 3: Research (Diverge → Evaluate → Converge)
 
-**First cycle: MAX 2 agents** — keep it fast (~2-3 min). Spawn in ONE
-Tool Use block with `fork_context: true`:
+**First cycle: MAX 2 agents** — keep it fast (~2-3 min). Spawn in one parallel batch:
 
 - `phoenix-patterns-analyst`: "How does this codebase handle {topics}?"
   Write to `.codex/plans/{slug}/research/codebase-scan.md`
