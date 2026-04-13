@@ -69,7 +69,7 @@ Each hook follows the pattern:
 1. **Propose** (Codex writes code)
 2. **Verify** (hook checks programmatically)
 3. **Reject with feedback** (specific violation message via stderr)
-4. **Retry** (Codex fixes the specific issue)
+4. **Revise** (Codex fixes the specific issue)
 
 This is more reliable than asking Codex to self-check because:
 

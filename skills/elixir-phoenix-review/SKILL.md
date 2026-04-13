@@ -80,7 +80,8 @@ based on the diff, then spawn selected agents in ONE message (parallel):**
 **Agent count**: Min 1, max 5. For <200 lines changed: spawn only
 elixir-reviewer + security-analyzer (if auth files). Log selection
 rationale in review output.
-Spawn using the standard Codex agent configuration for this environment.
+Spawn using default `spawn_agent` settings in this environment (set `agent_type`,
+leave other options unset unless the task explicitly requires additional context).
 
 **For focused reviews — spawn the specified agent only:**
 

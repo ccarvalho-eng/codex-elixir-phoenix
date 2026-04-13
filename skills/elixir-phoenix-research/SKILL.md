@@ -105,6 +105,8 @@ in parallel** (one per topic cluster):
 For each topic cluster, delegate one focused web research agent with explicit URLs,
 required extraction fields (examples, patterns, gotchas, version compatibility), and
 a concise summary target (500-800 words).
+Each agent writes results to a deterministic path:
+`.codex/research/{cluster-slug}/worker-{n}.md`.
 
 Rules:
 

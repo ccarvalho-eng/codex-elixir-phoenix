@@ -46,7 +46,8 @@ Run `mix xref callers MyApp.Accounts.update_user/2` to find all callers. Then re
 ## Delegate to call-tracer Agent
 
 For full recursive trees with argument extraction and **parallel category tracing**,
-run the call-tracer workflow with a focused function target.
+run the call-tracer workflow with a focused function target in MFA format
+(`Module:function/arity`), for example: `MyApp.Accounts:update_user/2`.
 
 The call-tracer agent uses **parallel subagents** for each entry point category:
 

@@ -69,7 +69,7 @@ One summary line per clean area suffices."
 ### Step 2: Collect Results
 
 Wait for ALL auditors to complete. Mark each auditor's task as
-`completed` via `update_plan` as it finishes. NEVER proceed while
+`completed` in the progress tracker as it finishes. NEVER proceed while
 any auditor is still running.
 
 Read reports from `.codex/audit/reports/`.
