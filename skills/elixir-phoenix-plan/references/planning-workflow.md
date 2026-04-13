@@ -114,7 +114,7 @@ agents' job -- let them handle pattern discovery.
 
 - ONLY spawn when evaluating a library NOT already in mix.exs
 - Do NOT spawn for: review blockers, refactoring, existing libraries
-- To understand an existing library's API, use Read/Grep on
+- To understand an existing library's API, use file reads + `rg` on
   `deps/{library}/lib/` or use Tidewave's `get_docs` instead
 
 **CRITICAL**: Spawn all applicable agents in one parallel batch.
@@ -132,7 +132,7 @@ generation until every agent has completed.
 
 Then read reports from `.codex/plans/{slug}/research/`.
 
-If an agent fails, do the research yourself with Read/Grep
+If an agent fails, do the research yourself with file reads + `rg`
 instead of re-spawning.
 
 ## Infrastructure Knowledge Persistence

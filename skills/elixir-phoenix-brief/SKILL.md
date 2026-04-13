@@ -46,7 +46,7 @@ Read the plan file and determine mode from phase statuses:
 1. If `$ARGUMENTS` has a path, use it
 2. Otherwise, find latest plan:
 
-   Use Glob to find `.codex/plans/*/plan.md` and pick the most recent.
+   Use `rg --files` to find `.codex/plans/*/plan.md` and pick the most recent.
 
 3. If no plan found, tell user and suggest ``elixir-phoenix-plan``
 4. Read the plan file

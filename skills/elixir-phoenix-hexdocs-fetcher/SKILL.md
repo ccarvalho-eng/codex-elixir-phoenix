@@ -9,38 +9,30 @@ metadata:
 
 # HexDocs Fetcher
 
-Efficiently fetch Elixir library documentation from hexdocs.pm using Codex's native `WebFetch` tool.
+Efficiently fetch Elixir library documentation from hexdocs.pm using Codex web tools (`web.search_query` and `web.open`).
 
 ## Usage
 
-When researching libraries, use `WebFetch`:
+When researching libraries:
 
-```
-# Fetch library overview
-WebFetch(
-  url: "https://hexdocs.pm`elixir-phoenix-oban`",
-  prompt: "Extract the main documentation, including module overview, installation instructions, and key functions. Format as clean markdown."
-)
+```text
+# Fetch library overview (known URL)
+web.open("https://hexdocs.pm/oban")
 
 # Fetch specific module docs
-WebFetch(
-  url: "https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html",
-  prompt: "Extract the module documentation including all public functions, their specs, and examples."
-)
+web.open("https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html")
 
-# Fetch getting started guide
-WebFetch(
-  url: "https://hexdocs.pm/ecto/getting-started.html",
-  prompt: "Extract the complete getting started guide content."
-)
+# Discover docs URL first, then open it
+web.search_query("Oban.Worker site:hexdocs.pm")
+web.open("{selected_result_url}")
 ```
 
 ## Token Efficiency
 
-WebFetch automatically converts HTML to markdown and extracts relevant content:
+Codex web tools extract page content so you can summarize key sections quickly:
 
-| Source | Raw HTML | With WebFetch | Benefit |
-|--------|----------|---------------|---------|
+| Source | Raw HTML | With Codex web tools | Benefit |
+|--------|----------|----------------------|---------|
 | HexDocs page | ~80k tokens | ~15k tokens | **80% reduction** |
 | Phoenix docs | ~120k tokens | ~25k tokens | **79% reduction** |
 | README | ~20k tokens | ~8k tokens | **60% reduction** |
@@ -49,17 +41,13 @@ WebFetch automatically converts HTML to markdown and extracts relevant content:
 
 When evaluating libraries, fetch docs efficiently:
 
-```
-# Get library overview with focused extraction
-WebFetch(
-  url: "https://hexdocs.pm`elixir-phoenix-oban`",
-  prompt: "Extract: 1) Installation instructions 2) Main features 3) Basic usage example"
-)
+```text
+web.open("https://hexdocs.pm/oban")
 ```
 
 ## Common HexDocs URLs
 
-```
+```text
 # Library overview
 https://hexdocs.pm/{library}
 
@@ -75,43 +63,39 @@ https://hexdocs.pm/{library}/{guide-name}.html
 https://hexdocs.pm/{library}/api-reference.html
 ```
 
-## Prompt Strategies
+## Extraction Strategies
 
-Use focused prompts for better extraction:
+Use focused extraction goals for better summaries:
 
-```
+```text
 # For API docs
-prompt: "Extract all public function docs with @spec and examples"
+Extract all public function docs with @spec and examples.
 
 # For guides
-prompt: "Extract the complete guide content preserving code examples"
+Extract the complete guide content preserving code examples.
 
 # For troubleshooting
-prompt: "Extract any troubleshooting sections, common errors, and FAQs"
+Extract troubleshooting sections, common errors, and FAQs.
 
 # For configuration
-prompt: "Extract configuration options and their defaults"
+Extract configuration options and their defaults.
 ```
 
 ## Caching
 
-WebFetch includes automatic 15-minute caching. When fetching the same URL multiple times in a session, results are cached automatically.
+Codex may cache repeated fetches internally. Still prefer reusing prior notes within the same plan/research folder.
 
-For longer persistence, save to planning directory:
+For longer persistence, save summaries under planning artifacts:
 
-```
-# After fetching, write the result to a file
-Write(
-  file_path: ".codex/plans/{slug}/research/docs`elixir-phoenix-oban`.md",
-  content: "{extracted content}"
-)
+```text
+.codex/plans/{slug}/research/docs-oban.md
 ```
 
 ## Tidewave Alternative
 
 If Tidewave MCP is available, prefer `mcp__tidewave__get_docs` for exact version-matched documentation:
 
-```
+```text
 mcp__tidewave__get_docs(module: "Oban.Worker")
 ```
 
@@ -120,5 +104,5 @@ This fetches docs for the exact version in your `mix.lock`.
 ## Iron Laws
 
 1. **NEVER fetch entire HexDocs sites** — always target specific modules or guides
-2. **Use focused prompts** — generic fetches waste tokens; specify what to extract
+2. **Use focused extraction goals** — generic fetches waste tokens; specify what to extract
 3. **Prefer Tidewave when available** — exact version match beats generic hexdocs.pm

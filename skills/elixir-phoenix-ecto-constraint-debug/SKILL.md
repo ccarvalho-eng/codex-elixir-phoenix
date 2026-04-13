@@ -33,19 +33,19 @@ Extract from the error message:
 
 ### Step 2: Find the Migration
 
-Use Grep to search for the constraint name in `priv/repo/migrations/`. Also check for `create unique_index`, `create index`, `add constraint`.
+Use `rg` to search for the constraint name in `priv/repo/migrations/`. Also check for `create unique_index`, `create index`, `add constraint`.
 
 Verify: Does the migration constraint match the schema's `unique_constraint/3` or `foreign_key_constraint/3` call?
 
 ### Step 3: Find the Schema
 
-Use Grep to find constraint handling in changesets (`unique_constraint`, `foreign_key_constraint`, `check_constraint`) in `lib/`.
+Use `rg` to find constraint handling in changesets (`unique_constraint`, `foreign_key_constraint`, `check_constraint`) in `lib/`.
 
 ### Step 4: Trace Insert Paths
 
 Find ALL callers that insert/update this schema:
 
-Use Grep to find all insert/update paths (`Repo.insert`, `Repo.update`, `Repo.insert_all`, `cast_assoc`) in `lib/`.
+Use `rg` to find all insert/update paths (`Repo.insert`, `Repo.update`, `Repo.insert_all`, `cast_assoc`) in `lib/`.
 
 ### Step 5: Identify the Cause
 

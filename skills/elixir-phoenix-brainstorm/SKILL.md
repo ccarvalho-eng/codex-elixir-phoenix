@@ -64,7 +64,7 @@ Interview is "sufficient" when total score >= 8 out of 12.
 
 **Before each question**, run a brief codebase scan on topics the user mentioned:
 
-1. User mentions a topic (e.g., "notifications") → run Grep/Glob for related patterns
+1. User mentions a topic (e.g., "notifications") → run `rg` / `rg --files` for related patterns
 2. Use scan results to ground your next question in what actually exists
 3. Unknown/niche topic → suggest research pause before continuing
 

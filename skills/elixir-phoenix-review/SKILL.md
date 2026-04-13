@@ -37,7 +37,7 @@ explain issues — do NOT create tasks or fix anything.
 **CRITICAL**: Create output dirs BEFORE spawning agents — agents
 cannot create directories and will fail repeatedly on writes.
 
-Determine SLUG from the most recent plan directory (use Glob on `.codex/plans/*/`), default to `"review"`.
+Determine SLUG from the most recent plan directory (use `rg --files` on `.codex/plans/*/`), default to `"review"`.
 Run `mkdir -p ".codex/plans/${SLUG}/reviews" ".codex/plans/${SLUG}/summaries"` and `mkdir -p .codex/reviews`.
 
 Then run `git diff --name-only HEAD~5` and `git diff --name-only main` to identify changed files. Save the diff base for pre-existing detection in Step 3b.

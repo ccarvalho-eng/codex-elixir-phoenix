@@ -79,7 +79,7 @@ After scanning the codebase:
 
 When the user mentions a topic, scan BEFORE asking the next question:
 
-| User mentions | Grep/Glob pattern | What to look for |
+| User mentions | `rg` / `rg --files` pattern | What to look for |
 |---------------|-------------------|------------------|
 | authentication, auth, login | `**/*auth*.ex`, `**/*session*.ex` | Guardian, Pow, custom plugs |
 | real-time, live, updates | `**/*_live.ex`, `**/*channel*.ex` | PubSub topics, socket setup |
@@ -96,9 +96,9 @@ When the user mentions a topic, scan BEFORE asking the next question:
 
 ### Scan Depth Rules
 
-- **First mention of a topic**: Medium scan — Grep + Read 1-2 key files (~5s)
-- **Follow-up on same topic**: Light scan — Grep only, check for new patterns (~2s)
-- **User asks "what do I have?"**: Full scan — Glob + Grep + Read multiple files (~10s)
+- **First mention of a topic**: Medium scan — `rg` + Read 1-2 key files (~5s)
+- **Follow-up on same topic**: Light scan — `rg` only, check for new patterns (~2s)
+- **User asks "what do I have?"**: Full scan — `rg --files` + `rg` + Read multiple files (~10s)
 - **Never**: spawn an agent for scanning during interview (too slow, breaks flow)
 
 ## Signal Detection
@@ -217,7 +217,7 @@ current architecture that informs the plan.}
 ## Transcript
 
 ### Q1: {question}
-**Context scan**: {what Grep/Glob found before this question}
+**Context scan**: {what `rg` / `rg --files` found before this question}
 **Answer**: {verbatim user response}
 **Coverage update**: What 0→1, Why 0→1
 

@@ -68,7 +68,7 @@ Skipping this causes rework — scratchpad captures dead-ends
 and decisions from planning that prevent taking wrong paths.
 
 Read the scratchpad at `.codex/plans/{slug}/scratchpad.md` — it's short and has critical context.
-Then search `.codex/solutions/` for relevant keywords using Grep to find solved patterns.
+Then search `.codex/solutions/` for relevant keywords using `rg` to find solved patterns.
 
 Apply findings: skip dead-ends, follow decisions, reuse patterns.
 Always ask the user when a task's intent is ambiguous —

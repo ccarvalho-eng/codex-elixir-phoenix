@@ -73,7 +73,7 @@ Use n1-check skill before shipping list views.
 
 ## Searching Solutions
 
-Use Grep to search `.codex/solutions/` by symptom (e.g., `NotLoaded`), by tag (e.g., `tags:.*preload`), or by component (e.g., `component: ecto`).
+Use `rg` to search `.codex/solutions/` by symptom (e.g., `NotLoaded`), by tag (e.g., `tags:.*preload`), or by component (e.g., `component: ecto`).
 
 ## Integration
 

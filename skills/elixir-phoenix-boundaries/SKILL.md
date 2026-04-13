@@ -38,8 +38,8 @@ Evaluate overall boundary health with a quantified score.
 
 ### Commands for Assessment
 
-Use Glob to count `.ex` files per context directory under `lib/my_app/*/`.
-Use Grep to count public function definitions per context file under `lib/my_app/*.ex`.
+Use `rg --files` to count `.ex` files per context directory under `lib/my_app/*/`.
+Use `rg` to count public function definitions per context file under `lib/my_app/*.ex`.
 Run `mix xref graph --format stats` for dependency analysis.
 Run `mix xref graph --format cycles --label compile` for compile-time circular dependencies.
 

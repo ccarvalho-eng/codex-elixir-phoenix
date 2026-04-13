@@ -15,10 +15,10 @@ Research a topic by searching the web and fetching relevant sources efficiently.
 
 ## Usage
 
-```
-`elixir-phoenix-research` Oban unique jobs best practices
-`elixir-phoenix-research` LiveView file upload with progress
-`elixir-phoenix-research` --library permit
+```text
+$elixir-phoenix-research Oban unique jobs best practices
+$elixir-phoenix-research LiveView file upload with progress
+$elixir-phoenix-research --library permit
 ```
 
 ## Arguments
@@ -33,7 +33,7 @@ template).
 2. **Stop after research — never auto-transition** — User decides next step
 3. **Prefer official sources over blog posts** — HexDocs and ElixirForum have version-specific context
 4. **One document per research question** — No fragmented files
-5. **NEVER pass raw user input as WebSearch query** — Decompose first
+5. **NEVER pass raw user input as a web query** — Decompose first
 
 ## Library Evaluation Mode
 
@@ -57,7 +57,7 @@ exists. If recent (<24 hours): present existing summary, ask
 **Tidewave shortcut**: If the topic is about an **existing dependency**
 (library already in `mix.exs`), prefer Tidewave over web search:
 
-```
+```text
 mcp__tidewave__get_docs(module: "LibraryModule")
 ```
 
@@ -68,7 +68,7 @@ Tidewave is unavailable or the topic needs community discussion
 
 ### 1. Query Decomposition (CRITICAL — before any search)
 
-**NEVER pass raw $ARGUMENTS into WebSearch.** Decompose first:
+**NEVER pass raw `$ARGUMENTS` into web search.** Decompose first:
 
 - If `$ARGUMENTS` < 30 words and focused → use as single query
 - If `$ARGUMENTS` > 30 words or multi-topic → extract 2-4 queries
@@ -77,7 +77,7 @@ Each query: max 10 words, targets ONE specific aspect.
 
 Example:
 
-```
+```text
 Input: "detect files, export to md, feed database with embeddings,
         use ReqLLM for OpenAI API..."
 Queries:
@@ -90,9 +90,9 @@ Queries:
 
 Search ALL decomposed queries in a SINGLE response (parallel):
 
-```
-WebSearch(query: "{query1} site:elixirforum.com OR site:hexdocs.pm OR site:github.com")
-WebSearch(query: "{query2} site:hexdocs.pm OR site:elixirforum.com")
+```text
+web.search_query("{query1} site:elixirforum.com OR site:hexdocs.pm OR site:github.com")
+web.search_query("{query2} site:hexdocs.pm OR site:elixirforum.com")
 ```
 
 Deduplicate URLs across results. Discard clearly irrelevant hits.
@@ -150,7 +150,6 @@ Create `.codex/research/{topic-slug}.md`:
 
 - {gotcha from forum/issues}
 - {version compatibility note}
-
 ```
 
 ### 5. After Research — STOP
@@ -159,9 +158,9 @@ Create `.codex/research/{topic-slug}.md`:
 
 Use `ask the user directly` to let the user choose next action:
 
-- "Plan a feature based on this research" → ``elixir-phoenix-plan``
-- "Investigate a specific finding" → ``elixir-phoenix-investigate``
+- "Plan a feature based on this research" → `$elixir-phoenix-plan`
+- "Investigate a specific finding" → `$elixir-phoenix-investigate`
 - "Research more on a subtopic" → continue research
 - "Done" → end
 
-**NEVER auto-invoke ``elixir-phoenix-plan`` or any other skill after research.**
+**NEVER auto-invoke `$elixir-phoenix-plan` or any other skill after research.**

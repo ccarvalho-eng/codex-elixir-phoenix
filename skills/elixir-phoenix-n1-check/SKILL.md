@@ -61,15 +61,15 @@ Repo.preload(user, posts: :comments)
 
 ## Quick Detection Commands
 
-Use Grep with context lines (`-B 5 -A 5`) to find `Enum.map` near `Repo.` calls in `lib/**/*.ex`.
-Use Grep to find association access patterns (`.posts`, `.comments`, `.orders`) in `lib/**/*.ex`.
-Use Grep with context (`-B 3`) to find `Repo.get` or `Repo.one` near loop patterns (`for`, `Enum`) in `lib/**/*.ex`.
+Use `rg` with context lines (`-B 5 -A 5`) to find `Enum.map` near `Repo.` calls in `lib/**/*.ex`.
+Use `rg` to find association access patterns (`.posts`, `.comments`, `.orders`) in `lib/**/*.ex`.
+Use `rg` with context (`-B 3`) to find `Repo.get` or `Repo.one` near loop patterns (`for`, `Enum`) in `lib/**/*.ex`.
 
 ## Analysis Command
 
 For a context module, run:
 
-Use Grep to find all `Repo.` calls in the context module, then verify each has appropriate preloads.
+Use `rg` to find all `Repo.` calls in the context module, then verify each has appropriate preloads.
 
 Then verify each query has appropriate preloads.
 

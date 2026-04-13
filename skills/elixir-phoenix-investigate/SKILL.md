@@ -54,7 +54,7 @@ confirm what's already obvious (confirmed waste: session c135330a).
 
 ### Step 0: Consult Compound Docs
 
-Search `.codex/solutions/` for relevant keywords using Grep.
+Search `.codex/solutions/` for relevant keywords using `rg`.
 
 If matching solution exists, present it and ask: "Apply this
 fix, or investigate fresh?"

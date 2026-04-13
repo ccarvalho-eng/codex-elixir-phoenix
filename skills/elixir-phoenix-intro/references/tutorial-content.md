@@ -248,7 +248,7 @@ If you're finding the plugin inconsistent, running `$elixir-phoenix-init` is the
 
 ### Layer 5: `$elixir-phoenix-review` + Iron Law Judge (On-Demand)
 
-The `iron-law-judge` agent does **pattern-based violation detection** — it uses Grep to search your changed files for known anti-patterns. But it only runs when you invoke `$elixir-phoenix-review`.
+The `iron-law-judge` agent does **pattern-based violation detection** — it uses `rg` to search your changed files for known anti-patterns. But it only runs when you invoke `$elixir-phoenix-review`.
 
 What it catches with automated detection:
 

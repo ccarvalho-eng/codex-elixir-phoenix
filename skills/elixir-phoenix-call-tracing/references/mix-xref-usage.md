@@ -153,7 +153,7 @@ callers=$(mix xref callers MyApp.Target.function/2)
 If not in a Mix project or xref fails:
 
 ```bash
-# Grep for function calls (less accurate)
+# `rg` for function calls (less accurate)
 grep -rn "Accounts\.update_user\|update_user(" lib/ --include="*.ex" | grep -v "def update_user"
 
 # Find function definitions
@@ -190,6 +190,6 @@ mix xref graph --only-runtime --sink MyApp.Module
 `mix xref callers` only finds calls to public functions. For private functions:
 
 ```bash
-# Grep within the module file
+# `rg` within the module file
 grep -n "function_name" lib/my_app/module.ex
 ```

@@ -40,7 +40,7 @@ institutional documentation.
 ### Step 2: Search Existing Solutions
 
 Create `.codex/solutions/` directory if it doesn't exist (run `mkdir -p .codex/solutions`).
-Then search `.codex/solutions/` for relevant keywords using Grep.
+Then search `.codex/solutions/` for relevant keywords using `rg`.
 
 If found: **Create new** (different root cause), **Update
 existing** (same root cause, new symptom), or **Skip**.

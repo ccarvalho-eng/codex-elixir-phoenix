@@ -33,17 +33,17 @@ Focus on:
 
 ### 2. Find Duplicate Ecto Query Patterns
 
-Use Grep to search for repeated Repo calls (`Repo.get!`, `Repo.get`, `Repo.one`) in `lib/**/*.ex`.
-Use Grep to find duplicate query patterns (`from.*in.*where`) in `lib/**/*.ex`.
+Use `rg` to search for repeated Repo calls (`Repo.get!`, `Repo.get`, `Repo.one`) in `lib/**/*.ex`.
+Use `rg` to find duplicate query patterns (`from.*in.*where`) in `lib/**/*.ex`.
 
 ### 3. Find Duplicate Validation Logic
 
-Use Grep with `output_mode: "count"` to count `def changeset` occurrences in `lib/**/*.ex`.
-Use Grep to find repeated validations (`validate_required`, `validate_format`) in `lib/**/*.ex`.
+Use `rg` with `output_mode: "count"` to count `def changeset` occurrences in `lib/**/*.ex`.
+Use `rg` to find repeated validations (`validate_required`, `validate_format`) in `lib/**/*.ex`.
 
 ### 4. Find Copy-Pasted Controller Actions
 
-Use Grep to find similar action patterns (`def create`, `def update`, `def delete`) in `lib/*_web/**/*.ex`.
+Use `rg` to find similar action patterns (`def create`, `def update`, `def delete`) in `lib/*_web/**/*.ex`.
 
 ## Common Duplication Patterns
 

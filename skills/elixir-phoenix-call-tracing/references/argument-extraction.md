@@ -133,7 +133,7 @@ defmodule ArgumentExtractor do
 end
 ```
 
-## Grep-Based Extraction (Simpler)
+## `rg`-Based Extraction (Simpler)
 
 When AST parsing is overkill:
 

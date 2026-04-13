@@ -25,7 +25,7 @@
 
 **Do NOT spawn when:**
 
-- Library is already in mix.exs (use Read/Grep on `deps/` instead)
+- Library is already in mix.exs (use file reads + `rg` on `deps/` instead)
 - Fixing review blockers (libraries already chosen)
 - Refactoring existing code
 - Understanding API of an existing dependency
@@ -34,7 +34,7 @@
 **To understand an existing library's API:**
 
 - Use `Read` on `deps/{library}/lib/` source code
-- Use `Grep` to find function signatures and docs
+- Use ``rg`` to find function signatures and docs
 - Use Tidewave's `mcp__tidewave__get_docs` if available
 - Do NOT spawn hex-library-researcher for this
 
