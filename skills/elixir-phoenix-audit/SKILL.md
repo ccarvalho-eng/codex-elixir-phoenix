@@ -15,7 +15,7 @@ Comprehensive project-wide health assessment using 5 parallel specialist subagen
 
 ## Usage
 
-```
+```bash
 `elixir-phoenix-audit`              # Full audit (default)
 `elixir-phoenix-audit` --quick      # 2-3 minute pulse check
 `elixir-phoenix-audit` --focus=security   # Deep dive single area
@@ -52,11 +52,13 @@ Spawn 5 specialists in parallel using agent tools when explicitly requested by t
 
 ## Workflow
 
-### Step 1: Create Task List and Spawn All 5 Auditors (Parallel)
+### Step 1: Create Task List and Run 5 Auditors
 
 Create progress tasks for each audit area and mark them in progress as each auditor starts.
 
-When the user explicitly requests delegation, launch all five auditors in parallel using Codex agents.
+Authoritative behavior:
+- If the user explicitly requests delegation, launch all five auditors in parallel using Codex agents.
+- If delegation is not requested, run the five audit areas sequentially in the main thread and keep the same progress tasks.
 
 **Agent prompts must be FOCUSED.** Scope each prompt to the
 relevant directories and patterns. Do NOT give vague prompts
