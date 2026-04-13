@@ -2,31 +2,20 @@
 
 Portable Elixir and Phoenix skills for Codex.
 
-This repo packages the custom skills from my local Codex setup in a layout that can be cloned and installed into another machine's `~/.codex/skills` directory.
+This repository packages custom skills from a local Codex setup so they can be installed on any machine into `~/.codex/skills`.
 
-## Credit
+## Included
 
-This project is heavily inspired by Oliver Kriska's Claude-focused Elixir/Phoenix plugin:
+- Elixir/Phoenix skills under [`skills/`](skills/)
+- Skill definitions in `SKILL.md`
+- Related `agents/` and `references/` folders when present
 
-- https://github.com/oliver-kriska/claude-elixir-phoenix
-
-This repo adapts that direction for a Codex-oriented skills setup. It is not an official fork.
-
-## What is included
-
-- 42 Elixir/Phoenix-oriented skills under `skills/`
-- Each skill keeps its `SKILL.md`
-- Optional `agents/` and `references/` directories are preserved
-- For the full catalog, browse [`skills/`](skills/)
-
-## What is not included in this repo
+## Not Included
 
 - Codex-curated `.system` skills
-- Personal config such as auth, sessions, logs, memories, and plugin caches are not part of this repo
+- Personal Codex data (auth, sessions, logs, memories, plugin caches)
 
 ## Install
-
-Clone the repo anywhere:
 
 ```bash
 git clone https://github.com/ccarvalho-eng/codex-elixir-phoenix.git
@@ -34,13 +23,9 @@ cd codex-elixir-phoenix
 ./install.sh
 ```
 
-By default this installs into:
+Default target: `~/.codex/skills`
 
-```bash
-~/.codex/skills
-```
-
-You can override the target:
+Custom target:
 
 ```bash
 CODEX_HOME=/path/to/.codex ./install.sh
@@ -54,15 +39,12 @@ Dry run:
 
 ## Update
 
-Pull the latest repo changes, then run:
-
 ```bash
+git pull
 ./install.sh
 ```
 
 ## Uninstall
-
-Remove only the skills managed by this repo from your Codex skills directory:
 
 ```bash
 ./uninstall.sh
@@ -74,8 +56,12 @@ Dry run:
 ./uninstall.sh --dry-run
 ```
 
-Override target:
+Custom target:
 
 ```bash
 CODEX_HOME=/path/to/.codex ./uninstall.sh
 ```
+
+## Acknowledgment
+
+Inspired by [oliver-kriska/claude-elixir-phoenix](https://github.com/oliver-kriska/claude-elixir-phoenix). This repository is a Codex-oriented adaptation and is not an official fork.
