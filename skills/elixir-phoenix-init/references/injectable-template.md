@@ -12,7 +12,7 @@ This file contains the exact content to inject between markers. Replace `{PLACEH
 
 ## SKILL EXECUTION ENFORCEMENT
 
-These rules govern ALL `/phx:*` command execution. Violations invalidate the session output.
+These rules govern ALL `$elixir-phoenix-*` skill execution. Violations invalidate the session output.
 
 1. **Skills are PROCEDURES, not suggestions.** Every numbered step MUST execute. Do not skip, reorder, or "optimize away" steps.
 2. **Agent spawning is MANDATORY when a skill says "spawn" or "always run".** Zero agents spawned when the skill requires them = skill failure.

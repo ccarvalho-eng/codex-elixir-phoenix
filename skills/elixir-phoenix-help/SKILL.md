@@ -1,12 +1,12 @@
 ---
 name: elixir-phoenix-help
-description: 'Elixir/Phoenix: Recommend the right /phx: command for planning, review,
-  debug, deploy, or test tasks. Use when "which command", "what should I use", or
+description: 'Elixir/Phoenix: Recommend the right `$elixir-phoenix-*` skill for planning,
+  review, debug, deploy, or test tasks. Use when "which skill", "what should I use", or
   "how do I". NOT for /help.'
 metadata:
-  short-description: 'Elixir/Phoenix: Recommend the right /phx: command for planning,
-    review, debug, deploy, or test tasks. Use when "which command", "what should I
-    use", or "how do I". NOT for /help.'
+  short-description: 'Elixir/Phoenix: Recommend the right `$elixir-phoenix-*` skill
+    for planning, review, debug, deploy, or test tasks. Use when "which skill", "what
+    should I use", or "how do I". NOT for /help.'
 ---
 
 # Plugin Help — Interactive Command Advisor
@@ -16,9 +16,9 @@ Helps users find the right command, skill, or agent for their situation.
 ## Usage
 
 ```
-`elixir-phoenix-help`                          # Analyze context, suggest commands
-`elixir-phoenix-help` how do I debug this?     # Route to `elixir-phoenix-investigate`
-`elixir-phoenix-help` add a new feature        # Route to `elixir-phoenix-plan` -> `elixir-phoenix-work`
+`$elixir-phoenix-help`                          # Analyze context, suggest commands
+`$elixir-phoenix-help` how do I debug this?     # Route to `$elixir-phoenix-investigate`
+`$elixir-phoenix-help` add a new feature        # Route to `$elixir-phoenix-plan` -> `$elixir-phoenix-work`
 ```
 
 ## Arguments
@@ -46,20 +46,20 @@ Map the user's situation to one of these categories:
 
 | Category | Signals | Primary Commands |
 |----------|---------|-----------------|
-| **Starting out** | No plans, new to plugin | ``elixir-phoenix-intro`` |
-| **Ideation** | "explore", "brainstorm", "not sure", "how to approach", "vague idea" | ``elixir-phoenix-brainstorm`` |
-| **New feature** | "add", "build", "implement", multi-file | ``elixir-phoenix-plan`` → ``elixir-phoenix-work`` |
-| **Quick change** | Single file, <50 lines, "fix typo" | ``elixir-phoenix-quick`` |
-| **Bug** | Error, stack trace, "broken", "failing" | ``elixir-phoenix-investigate`` |
-| **Review** | "check", "review", PR ready | ``elixir-phoenix-review`` |
-| **Performance** | "slow", "N+1", "memory" | ``elixir-phoenix-perf``, ``elixir-phoenix-n1-check``, ``elixir-phoenix-assigns-audit`` |
-| **Research** | "how to", "best practice", "evaluate lib" | ``elixir-phoenix-research`` |
-| **Resume work** | Existing plan with unchecked tasks | ``elixir-phoenix-work` --continue` |
-| **Post-fix** | "that worked", solved a hard bug | ``elixir-phoenix-compound`` |
-| **Full cycle** | Large feature, new domain area | ``elixir-phoenix-full`` |
-| **Project health** | "audit", "tech debt", "overall quality" | ``elixir-phoenix-audit``, ``elixir-phoenix-techdebt`` |
-| **Deployment** | "deploy", "release", "production" | ``elixir-phoenix-verify`` then deploy skill |
-| **Permissions** | "too many prompts", "allow", "permission fatigue" | ``elixir-phoenix-permissions`` |
+| **Starting out** | No plans, new to plugin | ``$elixir-phoenix-intro`` |
+| **Ideation** | "explore", "brainstorm", "not sure", "how to approach", "vague idea" | ``$elixir-phoenix-brainstorm`` |
+| **New feature** | "add", "build", "implement", multi-file | ``$elixir-phoenix-plan`` → ``$elixir-phoenix-work`` |
+| **Quick change** | Single file, <50 lines, "fix typo" | ``$elixir-phoenix-quick`` |
+| **Bug** | Error, stack trace, "broken", "failing" | ``$elixir-phoenix-investigate`` |
+| **Review** | "check", "review", PR ready | ``$elixir-phoenix-review`` |
+| **Performance** | "slow", "N+1", "memory" | ``$elixir-phoenix-perf``, ``$elixir-phoenix-n1-check``, ``$elixir-phoenix-assigns-audit`` |
+| **Research** | "how to", "best practice", "evaluate lib" | ``$elixir-phoenix-research`` |
+| **Resume work** | Existing plan with unchecked tasks | ``$elixir-phoenix-work` --continue` |
+| **Post-fix** | "that worked", solved a hard bug | ``$elixir-phoenix-compound`` |
+| **Full cycle** | Large feature, new domain area | ``$elixir-phoenix-full`` |
+| **Project health** | "audit", "tech debt", "overall quality" | ``$elixir-phoenix-audit``, ``$elixir-phoenix-techdebt`` |
+| **Deployment** | "deploy", "release", "production" | ``$elixir-phoenix-verify`` then deploy skill |
+| **Permissions** | "too many prompts", "allow", "permission fatigue" | ``$elixir-phoenix-permissions`` |
 
 ### Step 3: Respond or Clarify
 
@@ -87,14 +87,14 @@ Then recommend based on the answer.
 
 After recommending, always add:
 
-- "Run ``elixir-phoenix-help`` anytime to get routing advice"
-- If they seem new: "Try ``elixir-phoenix-intro`` for a full plugin walkthrough"
+- "Run ``$elixir-phoenix-help`` anytime to get routing advice"
+- If they seem new: "Try ``$elixir-phoenix-intro`` for a full plugin walkthrough"
 
 ## Iron Laws
 
 1. **ONE recommendation** — don't dump the full catalog, pick the best match
 2. **MAX ONE clarifying question** — don't interrogate, make your best guess
-3. **Show exact syntax** — ``elixir-phoenix-plan` Add user notifications` not just "use the plan command"
+3. **Show exact syntax** — ``$elixir-phoenix-plan` Add user notifications` not just "use the plan command"
 4. **Context over keywords** — existing plans + git state matter more than word matching
 5. **Never block** — if user already knows what they want, don't redirect
 
@@ -102,4 +102,4 @@ After recommending, always add:
 
 - Complements `intent-detection` (auto-trigger) with explicit invocation
 - References same routing logic but adds interactive clarification
-- Can recommend ``elixir-phoenix-intro`` for onboarding
+- Can recommend ``$elixir-phoenix-intro`` for onboarding

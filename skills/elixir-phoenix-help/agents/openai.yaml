@@ -1,4 +1,4 @@
 interface:
   display_name: "Help"
-  short_description: "Elixir/Phoenix: Recommend the right /phx: command for planning, review, debug, deploy, or test tasks. Use when \"which command\", \"what should I use\", or \"how do I\". NOT for /help."
+  short_description: "Elixir/Phoenix: Recommend the right $elixir-phoenix-* skill for planning, review, debug, deploy, or test tasks. Use when \"which skill\", \"what should I use\", or \"how do I\". NOT for /help."
   default_prompt: "Use $elixir-phoenix-help for this Elixir/Phoenix task."
