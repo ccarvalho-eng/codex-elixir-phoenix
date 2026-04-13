@@ -17,6 +17,7 @@ This repo adapts that direction for a Codex-oriented skills setup. It is not an 
 - 42 Elixir/Phoenix-oriented skills under `skills/`
 - Each skill keeps its `SKILL.md`
 - Optional `agents/` and `references/` directories are preserved
+- For the full catalog, browse [`skills/`](skills/)
 
 ## What is not included in this repo
 
