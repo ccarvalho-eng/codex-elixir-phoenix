@@ -8,15 +8,6 @@ metadata:
     code.
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Call Tracing
 
 Build call trees showing how functions are reached from entry points.
@@ -54,11 +45,8 @@ Run `mix xref callers MyApp.Accounts.update_user/2` to find all callers. Then re
 
 ## Delegate to call-tracer Agent
 
-For full recursive tree with argument extraction and **parallel category tracing**:
-
-```
-spawn_agent(agent_type: "call-tracer", prompt: "Build call tree for MyApp.Accounts.update_user/2")
-```
+For full recursive trees with argument extraction and **parallel category tracing**,
+run the call-tracer workflow with a focused function target.
 
 The call-tracer agent uses **parallel subagents** for each entry point category:
 

@@ -174,11 +174,11 @@ The plugin automatically prefers Tidewave tools over alternatives when available
 
 ## Section 4: Hooks & Behavioral Rules
 
-The plugin uses **layered enforcement** — some things run automatically, some depend on Claude following instructions, some are on-demand. Here's what actually happens:
+The plugin uses **layered enforcement** — some things run automatically, some depend on Codex following instructions, some are on-demand. Here's what actually happens:
 
 ### Layer 1: Hooks (Automatic, Every Edit)
 
-[Codex hooks](https://docs.anthropic.com/en/docs/claude-code/hooks) run shell scripts automatically after tool use. These are real automation — no instructions needed:
+Codex hooks run shell scripts automatically after tool use. These are real automation — no instructions needed:
 
 | Hook | Trigger | What It Does |
 |------|---------|-------------|
@@ -196,21 +196,21 @@ The plugin uses **layered enforcement** — some things run automatically, some 
 Format check **warns only** — it doesn't auto-fix (that would cause race conditions with the editor).
 
 The PreCompact hook detects active workflow phases (`$elixir-phoenix-plan`, `$elixir-phoenix-work`, `$elixir-phoenix-full`) and re-injects their critical rules
-before context compaction. This prevents "rule amnesia" where Claude loses behavioral constraints after context is compressed.
+before context compaction. This prevents "rule amnesia" where Codex loses behavioral constraints after context is compressed.
 
 Note: Compilation verification was moved to `$elixir-phoenix-work` phase checkpoints for speed. The `verify-elixir.sh` hook has been removed.
 
 ### Layer 2: Iron Laws in Skills (Behavioral)
 
 Each domain skill (ecto-patterns, liveview-patterns, security, etc.) embeds its own Iron Laws.
-When Claude loads a skill, the laws become active context.
-Claude is instructed to **stop and explain** before writing code that violates them.
+When Codex loads a skill, the laws become active context.
+Codex is instructed to **stop and explain** before writing code that violates them.
 
-This is behavioral — it works because the rules are in Claude's context, not because code enforces them. It's effective but not 100% guaranteed.
+This is behavioral — it works because the rules are in Codex's context, not because code enforces them. It's effective but not 100% guaranteed.
 
 ### Layer 3: Skill Loading by File Type (Behavioral)
 
-CLAUDE.md instructs Claude to load specific skills based on file patterns:
+AGENTS.md instructs Codex to load specific skills based on file patterns:
 
 ```text
 *_live.ex       → liveview-patterns (streams, async, components)
@@ -220,7 +220,7 @@ CLAUDE.md instructs Claude to load specific skills based on file patterns:
 Any .ex file    → elixir-idioms (always)
 ```
 
-This is **not plugin infrastructure** — it's instructions that Claude follows. No hooks trigger skill loading.
+This is **not plugin infrastructure** — it's instructions that Codex follows. No hooks trigger skill loading.
 This is the plugin's biggest known gap — in practice, skills rarely auto-load from file context alone.
 Running `$elixir-phoenix-init` significantly improves this.
 
@@ -230,12 +230,12 @@ Running `$elixir-phoenix-init` significantly improves this.
 
 ### Layer 4: `$elixir-phoenix-init` (Strengthens Everything)
 
-Running `$elixir-phoenix-init` injects enforcement rules **directly into your project's CLAUDE.md**. This is stronger than plugin-level instructions because CLAUDE.md is always read at session start.
+Running `$elixir-phoenix-init` injects enforcement rules **directly into your project's AGENTS.md**. This is stronger than plugin-level instructions because AGENTS.md is always read at session start.
 
 What it adds:
 
 - **7-step mandatory procedure** — complexity scoring, interview questions before coding, reference loading
-- **Iron Laws with STOP protocol** — explicitly tells Claude to halt on violations
+- **Iron Laws with STOP protocol** — explicitly tells Codex to halt on violations
 - **Verification rules** — `mix compile --warnings-as-errors && mix format` after code changes
 - **Stack-specific rules** — detects Phoenix version, Oban, Ash, Tidewave from `mix.exs`
 
@@ -282,9 +282,9 @@ Being honest about the gaps:
 ```text
 AUTOMATIC (hooks):     Format check, security reminders, progress logging, failure hints,
                        Iron Laws in subagents, PreCompact rule preservation
-BEHAVIORAL (Claude):   Iron Laws, skill loading, stop-and-explain
+BEHAVIORAL (Codex):   Iron Laws, skill loading, stop-and-explain
 ON-DEMAND (commands):  $elixir-phoenix-review (iron-law-judge), $elixir-phoenix-verify (compile/credo/dialyzer)
-STRENGTHENED BY:       $elixir-phoenix-init (injects rules into project CLAUDE.md)
+STRENGTHENED BY:       $elixir-phoenix-init (injects rules into project AGENTS.md)
 ```
 
 The plugin works best when all layers are active: `$elixir-phoenix-init` for persistent rules, hooks for automatic checks, and `$elixir-phoenix-review` to catch what the behavioral layer missed.

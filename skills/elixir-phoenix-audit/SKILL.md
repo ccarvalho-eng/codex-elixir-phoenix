@@ -9,15 +9,6 @@ metadata:
     refactors, or when asked about project health.'
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Project Health Audit
 
 Comprehensive project-wide health assessment using 5 parallel specialist subagents.
@@ -63,23 +54,9 @@ Spawn 5 specialists in parallel using agent tools when explicitly requested by t
 
 ### Step 1: Create Task List and Spawn All 5 Auditors (Parallel)
 
-**Create Codex tasks** for real-time progress visibility:
+Create progress tasks for each audit area and mark them in progress as each auditor starts.
 
-```
-For each auditor:
-  update_plan({subject: "{Area} audit", activeForm: "Auditing {area}..."})
-  update_plan({taskId, status: "in_progress"})
-```
-
-Then spawn all 5 agents with agent tools when explicitly requested by the user (parallel):
-
-```
-spawn_agent(agent_type: "general-purpose", prompt: "Architecture audit...", fork_context: true)
-spawn_agent(agent_type: "general-purpose", prompt: "Performance audit...", fork_context: true)
-spawn_agent(agent_type: "general-purpose", prompt: "Security audit...", fork_context: true)
-spawn_agent(agent_type: "general-purpose", prompt: "Test health audit...", fork_context: true)
-spawn_agent(agent_type: "general-purpose", prompt: "Dependency audit...", fork_context: true)
-```
+When the user explicitly requests delegation, launch all five auditors in parallel using Codex agents.
 
 **Agent prompts must be FOCUSED.** Scope each prompt to the
 relevant directories and patterns. Do NOT give vague prompts
@@ -99,18 +76,9 @@ Read reports from `.codex/audit/reports/`.
 
 ### Step 3: Compress Findings
 
-After all 5 auditors complete, spawn context-supervisor:
-
-```
-spawn_agent(agent_type: "context-supervisor", prompt: """
-Compress audit findings.
-Input: .codex/audit/reports/
-Output: .codex/audit/summaries/
-Priority: Health scores per category, critical findings
-only, cross-category correlations, deduplicate findings
-found by 2+ agents.
-""")
-```
+After all five auditors complete, run a consolidation pass to compress findings from
+`.codex/audit/reports/` into `.codex/audit/summaries/`, focusing on category scores,
+critical findings only, cross-category correlations, and deduplicated issues.
 
 Read `.codex/audit/summaries/consolidated.md` for synthesis.
 

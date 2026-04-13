@@ -7,15 +7,6 @@ metadata:
     one loop. Use after implementation, before PRs, or after fixing bugs.
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Verification Loop
 
 Project-aware verification for Elixir/Phoenix. Reads `mix.exs` and `.check.exs` to discover tools, test commands, and custom aliases before running anything.

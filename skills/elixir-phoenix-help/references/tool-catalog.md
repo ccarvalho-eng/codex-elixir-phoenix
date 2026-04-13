@@ -119,7 +119,7 @@ These commands form a connected pipeline — each reads the previous phase's out
 ### `$elixir-phoenix-init` — Project setup
 
 - **When**: Setting up plugin rules for a new project
-- **Output**: Injects rules into project CLAUDE.md
+- **Output**: Injects rules into project AGENTS.md
 
 ### `$elixir-phoenix-permissions` — Permission analyzer
 

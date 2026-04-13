@@ -117,8 +117,8 @@ agents' job -- let them handle pattern discovery.
 - To understand an existing library's API, use Read/Grep on
   `deps/{library}/lib/` or use Tidewave's `get_docs` instead
 
-**CRITICAL**: Spawn ALL applicable agents in ONE Tool Use block
-(parallel) with `run_in_background: true`. Minimum 1 agent spawned.
+**CRITICAL**: Spawn all applicable agents in one parallel batch.
+Minimum one agent must be spawned.
 
 **Agent prompts must be FOCUSED.** Scope each prompt to the
 relevant directories, files, and patterns. Do NOT give vague
@@ -263,7 +263,7 @@ Do NOT say "Start Phase 1" — `$elixir-phoenix-work` runs the whole plan.
 step-by-step:
 
 ```
-1. Run `/new` to start a fresh session
+1. Start a fresh Codex session
 2. Then run one of:
    $elixir-phoenix-work .codex/plans/{slug}/plan.md
    $elixir-phoenix-full .codex/plans/{slug}/plan.md  (includes review + compound)
@@ -283,8 +283,7 @@ plan with deeper research instead of creating a new one.
    selection rules as main flow), NOT Explore agents. Each agent
    MUST write detailed output to
    `.codex/plans/{slug}/research/{topic}.md` and return ONLY a
-   500-word summary. Spawn all in ONE Tool Use block with
-   `run_in_background: true`
+   500-word summary. Spawn all in one parallel batch.
 4. **Wait for ALL agents** -- You'll be notified as each completes.
    Read each agent's output file. Do NOT proceed until all complete
 5. **Enhance plan** -- Add implementation detail, resolve spikes,

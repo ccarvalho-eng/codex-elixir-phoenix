@@ -19,7 +19,7 @@ framework, adapted via LLM Discussion paper 2405.06373):
 
 ### Step 1: Diverge (Generate Diverse Approaches)
 
-Spawn 2 agents in ONE Tool Use block with `run_in_background: true`.
+Spawn 2 agents in one parallel batch.
 Each agent explores from a different perspective:
 
 **Agent 1: Codebase Patterns** (phoenix-patterns-analyst)

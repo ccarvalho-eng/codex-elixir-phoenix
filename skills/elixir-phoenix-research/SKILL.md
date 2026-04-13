@@ -9,15 +9,6 @@ metadata:
     HexDocs, ElixirForum, GitHub.
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Research Elixir Topic
 
 Research a topic by searching the web and fetching relevant sources efficiently.
@@ -111,17 +102,9 @@ Deduplicate URLs across results. Discard clearly irrelevant hits.
 Group URLs by topic cluster. Spawn **1-3 web-researcher agents
 in parallel** (one per topic cluster):
 
-```
-spawn_agent(agent_type: "web-researcher", prompt: """
-Research focus: {specific aspect from decomposed query}
-Fetch these URLs:
-- {url1}
-- {url2}
-- {url3}
-Extract: code examples, patterns, gotchas, version compatibility.
-Return 500-800 word summary.
-""", fork_context: true)
-```
+For each topic cluster, delegate one focused web research agent with explicit URLs,
+required extraction fields (examples, patterns, gotchas, version compatibility), and
+a concise summary target (500-800 words).
 
 Rules:
 

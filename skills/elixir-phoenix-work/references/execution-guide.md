@@ -113,25 +113,11 @@ Tasks are parallelizable if they:
 
 ### Spawning Pattern
 
-Spawn ALL parallel tasks in ONE message using the Agent tool:
-
-```
-Agent({
-  subagent_type: "general-purpose",
-  prompt: "Implement P2-T1: Add currency/area unit selectors to
-    occupier deal form at lib/.../occupier_deal/.../details_form.ex.
-    [full task context here]",
-  run_in_background: true,
-  mode: "bypassPermissions"
-})
-Agent({
-  subagent_type: "general-purpose",
-  prompt: "Implement P2-T2: Add selectors to landlord deal form...",
-  run_in_background: true,
-  mode: "bypassPermissions"
-})
-// ... one per parallel task
-```
+Spawn all parallel tasks in one batch using Codex agents.
+Each delegated task should include:
+- exact task ID and file scope
+- full task context needed to execute independently
+- explicit ownership so workers do not overlap
 
 ### Waiting and Checkpoint
 
@@ -244,12 +230,11 @@ After each task passes verification:
    implementation note** — key decisions, gotchas, actual values.
    Example: `- [x] [P2-T2] Add password_hash — used Bcrypt, 12 rounds, added virtual :password`
    These notes survive context compaction since the plan is re-read on resume.
-2. **Complete Codex task**: `update_plan({taskId, status: "completed"})`
+2. **Complete Codex task**: mark the task as completed in the progress tracker.
    This updates the live progress indicator visible in the UI.
 3. **Update phase status**: If all tasks done, change to `[COMPLETED]`
 4. **Log progress**: Append to `.codex/plans/{feature}/progress.md`
-5. **Start next task**: `update_plan({nextTaskId, status: "in_progress"})`
-   then move to next unchecked task
+5. **Start next task**: mark the next task as in progress, then move to the next unchecked task.
 
 ### Progress Log Entry
 

@@ -2,7 +2,8 @@
 
 How to correctly write permissions to Codex settings files.
 
-Source: [code.claude.com/docs/en/permissions](https://code.claude.com/docs/en/permissions)
+Source: [`skills/elixir-phoenix-permissions/SKILL.md`](../SKILL.md)
+and this reference document's validated examples.
 
 ## Settings File Hierarchy
 
@@ -61,8 +62,8 @@ Permission rules follow `Tool` or `Tool(specifier)` format.
 
 ### Deprecated `:*` syntax
 
-> "The legacy `:*` suffix syntax is equivalent to `*` but is deprecated."
-> — [Codex docs](https://code.claude.com/docs/en/permissions)
+> The legacy `:*` suffix syntax is treated as deprecated; prefer `*`-style rules.
+> — See [`skills/elixir-phoenix-permissions/SKILL.md`](../SKILL.md)
 
 **Do NOT use** `Bash(git:*)` — use `Bash(git *)` instead. The `:*` format
 may not match reliably and will be removed in a future version.

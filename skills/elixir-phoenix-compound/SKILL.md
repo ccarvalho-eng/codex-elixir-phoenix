@@ -8,15 +8,6 @@ metadata:
     or $elixir-phoenix-investigate.'
 ---
 
-# Codex Port Notes
-
-- Treat original slash-command examples as references to the corresponding Codex skills, not as literal commands.
-- Ask the user directly with concise plain-text questions in place of Claude interaction helpers.
-- Use `update_plan` for progress tracking when it adds value; ignore Claude task APIs.
-- Default to local execution. Only use `spawn_agent` or parallel agent work if the user explicitly asks for delegation.
-- Use `.codex/` for workflow artifacts mentioned by the original instructions.
-- Read supporting material from this skill's local `references/` directory whenever the source text points at the original skill directory.
-
 # Compound — Capture Solutions as Knowledge
 
 After fixing a problem, capture the solution as searchable
@@ -67,7 +58,7 @@ then create file using `compound-docs/references/resolution-template.md`.
 1. **Continue** (default)
 2. **Promote to Iron Law check** — Add to iron-law-judge
 3. **Update skill reference** — Add to relevant skill
-4. **Update CLAUDE.md** — Add prevention rule
+4. **Update AGENTS.md** — Add prevention rule
 
 ## Auto-Trigger Phrases
 
