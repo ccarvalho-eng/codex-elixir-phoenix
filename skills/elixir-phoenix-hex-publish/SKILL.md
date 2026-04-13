@@ -1,6 +1,9 @@
 ---
-name: hex-publish
+name: elixir-phoenix-hex-publish
 description: Use when preparing or publishing a new Hex.pm release for an Elixir package. Handles release review, README and wiki impact checks, CHANGELOG.md updates, mix.exs version bumps, validation, git tag creation, GitHub release creation, and Hex publish steps.
+metadata:
+  short-description: Use when preparing or publishing a new Hex.pm release for an
+    Elixir package.
 ---
 
 # Hex Publish

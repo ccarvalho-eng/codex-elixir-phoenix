@@ -1,6 +1,6 @@
-# Tool Catalog — Complete Command Reference
+# Tool Catalog — Command Reference
 
-Full catalog of all plugin commands, skills, and agents for `$elixir-phoenix-help` routing.
+Routing-oriented catalog of core plugin commands, skills, and agents for `$elixir-phoenix-help`.
 
 ## Workflow Commands (the main cycle)
 
@@ -98,6 +98,12 @@ These commands form a connected pipeline — each reads the previous phase's out
 - **Runs**: `mix compile --warnings-as-errors`, `mix format`, `mix credo`, `mix test`
 - **Output**: Pass/fail report
 
+### `$elixir-phoenix-hex-publish` — Publish a Hex release
+
+- **When**: Releasing a new package version to Hex.pm
+- **Input**: Intended version bump (explicit or inferred)
+- **Output**: Release prep, tag/release commands, publish status
+
 ### `$elixir-phoenix-research <topic>` — Research with parallel workers
 
 - **When**: "How to implement X", "Best practices for Y", "What library for Z"
@@ -156,12 +162,41 @@ These commands form a connected pipeline — each reads the previous phase's out
 - **Input**: Error message or constraint name
 - **Output**: Traces triggers, checks migrations, finds duplicate data
 
+### `$elixir-phoenix-migrations` — Migration safety planning
+
+- **When**: Schema changes, backfills, zero-downtime rollout planning
+- **Input**: Requested DB/schema change
+- **Output**: Phased migration plan, risk notes, rollback path
+
+### `$elixir-phoenix-upgrade` — Dependency/framework upgrade workflow
+
+- **When**: Upgrading Elixir/OTP/Phoenix/Ecto/LiveView dependencies
+- **Input**: Target versions or upgrade scope
+- **Output**: Phased upgrade plan, compatibility checks, validation results
+
+### `$elixir-phoenix-liveview-debug` — LiveView bug workflow
+
+- **When**: Event/state drift, reconnect bugs, stream/assign lifecycle issues
+- **Input**: Reproduction timeline, failing flow, or stack traces
+- **Output**: Callback-state root cause and regression fix strategy
+
+### `$elixir-phoenix-incident-response` — Production incident triage
+
+- **When**: Outage, elevated error rates, or critical path degradation
+- **Input**: Symptoms, timeline, and recent deploy/config context
+- **Output**: Stabilization actions, likely causes, hotfix/rollback recommendation
+
 ## Analysis Commands
 
 ### `$elixir-phoenix-perf` — Performance analysis
 
 - **When**: "App is slow", "queries are slow", "LiveView is laggy"
 - **Covers**: Ecto queries, LiveView renders, OTP bottlenecks
+
+### `$elixir-phoenix-observability` — Metrics, traces, and logs
+
+- **When**: Instrumentation gaps or weak production visibility
+- **Covers**: Telemetry events, traces, structured logging, actionable alerts
 
 ### `$elixir-phoenix-n1-check` — N+1 query detection
 
@@ -258,6 +293,7 @@ Pre-PR:          $elixir-phoenix-verify → $elixir-phoenix-review
 Research:        $elixir-phoenix-research [topic]
 Evaluate lib:    $elixir-phoenix-research --library [name]
 Resume work:     $elixir-phoenix-work --continue
+Release:         $elixir-phoenix-hex-publish
 Post-fix lesson: $elixir-phoenix-compound
 Permissions:     $elixir-phoenix-permissions
 ```
