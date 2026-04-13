@@ -59,3 +59,23 @@ Pull the latest repo changes, then run:
 ```bash
 ./install.sh
 ```
+
+## Uninstall
+
+Remove only the skills managed by this repo from your Codex skills directory:
+
+```bash
+./uninstall.sh
+```
+
+Dry run:
+
+```bash
+./uninstall.sh --dry-run
+```
+
+Override target:
+
+```bash
+CODEX_HOME=/path/to/.codex ./uninstall.sh
+```
