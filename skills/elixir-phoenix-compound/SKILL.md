@@ -50,8 +50,8 @@ existing** (same root cause, new symptom), or **Skip**.
 Extract from session context: module, symptoms, investigation
 steps, root cause, solution code, and prevention advice.
 
-Validate frontmatter against `compound-docs/references/schema.md`,
-then create file using `compound-docs/references/resolution-template.md`.
+Open `elixir-phoenix-compound-docs` and use its schema and
+resolution template references before writing the solution file.
 
 ### Step 4: Decision Menu
 
@@ -86,4 +86,4 @@ When user says "that worked", "it's fixed", "problem solved",
 ## References
 
 - `references/compound-workflow.md` — Detailed step-by-step
-- See also: `compound-docs` skill for schema and templates
+- See also: `elixir-phoenix-compound-docs` for schema and templates
