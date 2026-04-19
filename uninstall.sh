@@ -13,29 +13,36 @@ EOF
 
 DRY_RUN=0
 
-case "${1:-}" in
-  --dry-run)
-    DRY_RUN=1
-    ;;
-  "" )
-    ;;
-  -h|--help)
-    usage
-    exit 0
-    ;;
-  *)
-    usage
-    exit 1
-    ;;
-esac
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run)
+      DRY_RUN=1
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+
+  shift
+done
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOURCE_DIR="$REPO_ROOT/skills"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 TARGET_DIR="$CODEX_HOME/skills"
+MANIFEST_PATH="$TARGET_DIR/.codex-elixir-phoenix-manifest"
 
 echo "Source: $SOURCE_DIR"
 echo "Target: $TARGET_DIR"
+
+list_source_skills() {
+  find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d | sort
+}
 
 remove_skill() {
   local skill_name="$1"
@@ -54,15 +61,37 @@ remove_skill() {
   fi
 }
 
-while IFS= read -r skill_path; do
-  skill_name="$(basename "$skill_path")"
+OWNED_SKILLS=()
 
-  if [[ "$skill_name" == ".system" ]]; then
-    continue
-  fi
+if [[ -f "$MANIFEST_PATH" ]]; then
+  while IFS= read -r skill_name; do
+    [[ -z "$skill_name" ]] && continue
+    OWNED_SKILLS+=("$skill_name")
+  done < "$MANIFEST_PATH"
+else
+  while IFS= read -r skill_path; do
+    skill_name="$(basename "$skill_path")"
 
+    if [[ "$skill_name" == ".system" ]]; then
+      continue
+    fi
+
+    OWNED_SKILLS+=("$skill_name")
+  done < <(list_source_skills)
+fi
+
+for skill_name in "${OWNED_SKILLS[@]}"; do
   remove_skill "$skill_name"
-done < <(find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -type d | sort)
+done
+
+if [[ -f "$MANIFEST_PATH" ]]; then
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "[dry-run] remove $MANIFEST_PATH"
+  else
+    rm -f "$MANIFEST_PATH"
+    echo "removed manifest"
+  fi
+fi
 
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "Dry run complete."
