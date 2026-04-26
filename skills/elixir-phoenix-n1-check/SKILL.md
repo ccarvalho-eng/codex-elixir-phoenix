@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-n1-check
-description: 'Elixir/Phoenix: Scan Ecto code for N+1 anti-patterns — Repo calls in
-  loops, missing preloads, unpreloaded associations. Use when excessive queries reported
-  or wanting an N+1 audit.'
+description: 'Scan Ecto code for N+1 queries and missing preloads.'
 metadata:
-  short-description: 'Elixir/Phoenix: Scan Ecto code for N+1 anti-patterns — Repo
-    calls in loops, missing preloads, unpreloaded associations. Use when excessive
-    queries reported or wanting an N+1 audit.'
+  short-description: 'Audit Ecto queries for N+1s'
 ---
 
 # N+1 Query Detection

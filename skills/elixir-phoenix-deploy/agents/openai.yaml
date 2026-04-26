@@ -1,4 +1,4 @@
 interface:
   display_name: "Deploy"
-  short_description: "Elixir/Phoenix deployment patterns — Dockerfile, fly.toml, runtime.exs, mix release, rel/ overlays. Use when configuring Fly.io, Docker, CI/CD, health checks, or production migrations."
+  short_description: "Phoenix deployment patterns"
   default_prompt: "Use $elixir-phoenix-deploy for this Elixir/Phoenix task."

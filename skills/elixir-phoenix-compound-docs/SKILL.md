@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-compound-docs
-description: Searchable Elixir/Phoenix/Ecto solution documentation system with YAML
-  frontmatter. Builds institutional knowledge from solved problems. Use when consulting
-  past solutions before investigating new issues.
+description: 'Search past Phoenix solution docs before starting a new investigation.'
 metadata:
-  short-description: Searchable Elixir/Phoenix/Ecto solution documentation system
-    with YAML frontmatter. Builds institutional knowledge from solved problems. Use
-    when consulting past solutions before investigating new issues.
+  short-description: 'Search Phoenix solution docs'
 ---
 
 # Compound Docs — Institutional Knowledge Base

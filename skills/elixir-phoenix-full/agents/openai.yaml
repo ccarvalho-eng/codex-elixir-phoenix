@@ -1,4 +1,4 @@
 interface:
   display_name: "Full"
-  short_description: "Elixir/Phoenix: Use for large features spanning multiple contexts, new domain modules, or when the user wants autonomous end-to-end implementation. Runs the full plan-implement-review-compound cycle with specialist agents and Iron Laws enforcement."
+  short_description: "Run the full Phoenix work loop"
   default_prompt: "Use $elixir-phoenix-full for this Elixir/Phoenix task."

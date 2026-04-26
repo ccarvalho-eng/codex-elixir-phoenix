@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-liveview-patterns
-description: 'Elixir/Phoenix: LiveView patterns — PubSub, uploads, components, forms,
-  assign_async, streams. Use when building LiveView features or debugging handle_event
-  lifecycle.'
+description: 'Apply LiveView patterns for forms, components, uploads, async, and streams.'
 metadata:
-  short-description: 'Elixir/Phoenix: LiveView patterns — PubSub, uploads, components,
-    forms, assign_async, streams. Use when building LiveView features or debugging
-    handle_event lifecycle.'
+  short-description: 'Apply LiveView feature patterns'
 ---
 
 # LiveView Patterns Reference

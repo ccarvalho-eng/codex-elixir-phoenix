@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-investigate
-description: Investigate bugs and errors in Elixir/Phoenix — root-cause analysis for
-  crashes, exceptions, stack traces, test failures. Use --parallel for deep 4-track
-  investigation.
+description: 'Investigate Phoenix bugs, crashes, and test failures to find root cause.'
 metadata:
-  short-description: Investigate bugs and errors in Elixir/Phoenix — root-cause analysis
-    for crashes, exceptions, stack traces, test failures. Use --parallel for deep
-    4-track investigation.
+  short-description: 'Investigate Phoenix bugs and failures'
 ---
 
 # Investigate Bug

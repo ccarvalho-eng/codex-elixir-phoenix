@@ -1,4 +1,4 @@
 interface:
   display_name: "Ecto Constraint Debug"
-  short_description: "Elixir/Phoenix: Debug Ecto constraint violations - trace triggers, check migrations, find duplicate data. Use when seeing unique_constraint, foreign_key_constraint, or check_constraint errors."
+  short_description: "Debug Ecto constraint failures"
   default_prompt: "Use $elixir-phoenix-ecto-constraint-debug for this Elixir/Phoenix task."

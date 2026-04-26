@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-quick
-description: Implement small Phoenix changes without planning — add validations, update
-  routes, fix components, create migrations. Use for single-file edits under 50 lines.
+description: 'Implement a small Phoenix change without the full planning workflow.'
 metadata:
-  short-description: Implement small Phoenix changes without planning — add validations,
-    update routes, fix components, create migrations. Use for single-file edits under
-    50 lines.
+  short-description: 'Execute small Phoenix changes'
 ---
 
 # Quick Mode

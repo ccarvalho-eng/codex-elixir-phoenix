@@ -1,4 +1,4 @@
 interface:
   display_name: "Hex Publish"
-  short_description: "Prepare and publish Hex releases"
+  short_description: "Publish a Hex package release"
   default_prompt: "Use $elixir-phoenix-hex-publish to prepare and publish a new Hex.pm release for this project."

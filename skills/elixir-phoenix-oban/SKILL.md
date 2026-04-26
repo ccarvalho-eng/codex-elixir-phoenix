@@ -1,14 +1,8 @@
 ---
 name: elixir-phoenix-oban
-description: 'Elixir/Phoenix: Oban job processing — workers, perform/1 (OSS) and process/1
-  (Pro), queues, cron, retries, unique jobs, idempotency, Oban Pro (Workflow, Batch,
-  Chunk, Smart Engine), Testing. Use when writing Oban workers, queue config, or debugging
-  jobs.'
+description: 'Apply Oban patterns for workers, queues, retries, uniqueness, and testing.'
 metadata:
-  short-description: 'Elixir/Phoenix: Oban job processing — workers, perform/1 (OSS)
-    and process/1 (Pro), queues, cron, retries, unique jobs, idempotency, Oban Pro
-    (Workflow, Batch, Chunk, Smart Engine), Testing. Use when writing Oban workers,
-    queue config, or debugging jobs.'
+  short-description: 'Apply Oban job and queue patterns'
 ---
 
 # Oban Background Jobs Reference

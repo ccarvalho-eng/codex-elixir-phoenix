@@ -1,4 +1,4 @@
 interface:
   display_name: "Learn From Fix"
-  short_description: "Elixir/Phoenix: Capture lessons after fixing a bug or receiving a correction — ecto, liveview, oban, iron law mistakes. Use when the user corrects your approach or teaches a pattern."
+  short_description: "Capture lessons from Phoenix fixes"
   default_prompt: "Use $elixir-phoenix-learn-from-fix for this Elixir/Phoenix task."

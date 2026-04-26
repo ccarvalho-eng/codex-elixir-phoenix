@@ -1,4 +1,4 @@
 interface:
   display_name: "Intent Detection"
-  short_description: "Elixir/Phoenix: Route ambiguous work requests to the correct $elixir-phoenix-* workflow. Use when intent is unclear, mixed (bug + refactor), or user asks \"how to approach this\"."
+  short_description: "Route ambiguous Phoenix requests"how to approach this\"."
   default_prompt: "Use $elixir-phoenix-intent-detection for this Elixir/Phoenix task."

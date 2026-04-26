@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-migrations
-description: Elixir/Phoenix database migration workflow — additive changes, backfills,
-  and zero-downtime rollout planning for Ecto/Postgres.
+description: 'Plan Ecto and Postgres migrations with additive, backfill-safe rollouts.'
 metadata:
-  short-description: Elixir/Phoenix database migration workflow — additive changes,
-    backfills, and zero-downtime rollout planning for Ecto/Postgres.
+  short-description: 'Plan safe Ecto/Postgres migrations'
 ---
 
 # Ecto Migration Safety Workflow

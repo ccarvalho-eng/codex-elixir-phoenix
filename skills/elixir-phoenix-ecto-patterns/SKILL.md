@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-ecto-patterns
-description: 'Elixir/Phoenix: Ecto patterns — schemas, changesets, queries, migrations,
-  Multi, associations, preloads, upserts. Use when editing Repo calls, Ecto.Query,
-  or schema fields. Skip for Ash.'
+description: 'Apply Ecto patterns for schemas, changesets, queries, migrations, and preloads.'
 metadata:
-  short-description: 'Elixir/Phoenix: Ecto patterns — schemas, changesets, queries,
-    migrations, Multi, associations, preloads, upserts. Use when editing Repo calls,
-    Ecto.Query, or schema fields. Skip for Ash.'
+  short-description: 'Apply Ecto schema and query patterns'
 ---
 
 # Ecto Patterns Reference

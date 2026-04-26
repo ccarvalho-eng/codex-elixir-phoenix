@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-testing
-description: Elixir testing patterns — ExUnit, Mox, factories, LiveView test helpers.
-  Use when working on *_test.exs, test/support/, factory files, or fixing test failures.
+description: 'Apply Elixir testing patterns for ExUnit, Mox, factories, and LiveView.'
 metadata:
-  short-description: Elixir testing patterns — ExUnit, Mox, factories, LiveView test
-    helpers. Use when working on *_test.exs, test/support/, factory files, or fixing
-    test failures.
+  short-description: 'Apply Elixir testing patterns'
 ---
 
 # Elixir Testing Reference

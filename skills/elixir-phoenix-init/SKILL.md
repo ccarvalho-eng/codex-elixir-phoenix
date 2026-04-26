@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-init
-description: 'Elixir/Phoenix: Initialize plugin in a project — install Iron Laws,
-  auto-activation rules, and reference auto-loading into AGENTS.md. Use when setting
-  up or updating the plugin.'
+description: 'Install or update the plugin rules and AGENTS.md wiring in a Phoenix project.'
 metadata:
-  short-description: 'Elixir/Phoenix: Initialize plugin in a project — install Iron
-    Laws, auto-activation rules, and reference auto-loading into AGENTS.md. Use when
-    setting up or updating the plugin.'
+  short-description: 'Set up Phoenix plugin rules'
 ---
 
 # Plugin Initialization

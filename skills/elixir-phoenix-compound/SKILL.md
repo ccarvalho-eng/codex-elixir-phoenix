@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-compound
-description: 'Elixir/Phoenix: Capture solved problems as searchable solution docs.
-  Use after fixing bugs, when "that worked", or after successful $elixir-phoenix-review or $elixir-phoenix-investigate.'
+description: 'Capture a solved Phoenix problem as a reusable solution doc.'
 metadata:
-  short-description: 'Elixir/Phoenix: Capture solved problems as searchable solution
-    docs. Use after fixing bugs, when "that worked", or after successful $elixir-phoenix-review
-    or $elixir-phoenix-investigate.'
+  short-description: 'Capture reusable Phoenix fix docs'
 ---
 
 # Compound — Capture Solutions as Knowledge

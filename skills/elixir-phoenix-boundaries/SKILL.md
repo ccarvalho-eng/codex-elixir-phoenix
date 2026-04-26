@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-boundaries
-description: Analyze Phoenix context boundaries and module coupling via mix xref.
-  Use when checking cross-context calls, validating dependencies, before splitting
-  modules, or reviewing architecture.
+description: 'Analyze Phoenix context boundaries and coupling with `mix xref`.'
 metadata:
-  short-description: Analyze Phoenix context boundaries and module coupling via mix
-    xref. Use when checking cross-context calls, validating dependencies, before splitting
-    modules, or reviewing architecture.
+  short-description: 'Audit Phoenix context boundaries'
 ---
 
 # Phoenix Context Boundary Validation

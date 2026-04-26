@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-review
-description: 'Elixir/Phoenix: Review code with parallel agents — tests, security,
-  Ecto, LiveView, Oban. Use after implementation to catch bugs and anti-patterns before
-  committing.'
+description: 'Review Phoenix changes with parallel specialists before commit or PR.'
 metadata:
-  short-description: 'Elixir/Phoenix: Review code with parallel agents — tests, security,
-    Ecto, LiveView, Oban. Use after implementation to catch bugs and anti-patterns
-    before committing.'
+  short-description: 'Review Phoenix changes in parallel'
 ---
 
 # Review Elixir/Phoenix Code

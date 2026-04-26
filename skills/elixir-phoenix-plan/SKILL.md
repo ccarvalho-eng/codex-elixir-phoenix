@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-plan
-description: Plan multi-step Phoenix features with specialist agents. Use when building
-  new domains, multi-file features, or creating plans from review findings. Use --existing
-  to enhance a plan.
+description: 'Plan multi-step Phoenix work, new domains, or larger multi-file changes.'
 metadata:
-  short-description: Plan multi-step Phoenix features with specialist agents. Use
-    when building new domains, multi-file features, or creating plans from review
-    findings. Use --existing to enhance a plan.
+  short-description: 'Plan multi-step Phoenix changes'
 ---
 
 # Plan Elixir/Phoenix Feature

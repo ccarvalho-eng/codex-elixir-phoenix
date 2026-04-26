@@ -1,4 +1,4 @@
 interface:
   display_name: "Ecto Patterns"
-  short_description: "Elixir/Phoenix: Ecto patterns — schemas, changesets, queries, migrations, Multi, associations, preloads, upserts. Use when editing Repo calls, Ecto.Query, or schema fields. Skip for Ash."
+  short_description: "Apply Ecto schema and query patterns"
   default_prompt: "Use $elixir-phoenix-ecto-patterns for this Elixir/Phoenix task."

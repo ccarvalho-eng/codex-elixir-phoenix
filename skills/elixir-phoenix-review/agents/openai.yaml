@@ -1,4 +1,4 @@
 interface:
   display_name: "Review"
-  short_description: "Elixir/Phoenix: Review code with parallel agents — tests, security, Ecto, LiveView, Oban. Use after implementation to catch bugs and anti-patterns before committing."
+  short_description: "Review Phoenix changes in parallel"
   default_prompt: "Use $elixir-phoenix-review for this Elixir/Phoenix task."

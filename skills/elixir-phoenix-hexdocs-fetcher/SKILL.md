@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-hexdocs-fetcher
-description: Fetch HexDocs for Elixir libraries with HTML-to-markdown conversion.
-  Use when looking up docs on hexdocs.pm — modules, functions, guides, changelogs.
+description: 'Fetch and convert HexDocs pages for focused library lookups.'
 metadata:
-  short-description: Fetch HexDocs for Elixir libraries with HTML-to-markdown conversion.
-    Use when looking up docs on hexdocs.pm — modules, functions, guides, changelogs.
+  short-description: 'Fetch focused HexDocs content'
 ---
 
 # HexDocs Fetcher

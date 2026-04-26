@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-help
-description: 'Elixir/Phoenix: Recommend the right `$elixir-phoenix-*` skill for planning,
-  review, debug, deploy, or test tasks. Use when "which skill", "what should I use", or
-  "how do I". NOT for /help.'
+description: 'Recommend the right `$elixir-phoenix-*` skill for the current task.'
 metadata:
-  short-description: 'Elixir/Phoenix: Recommend the right `$elixir-phoenix-*` skill
-    for planning, review, debug, deploy, or test tasks. Use when "which skill", "what
-    should I use", or "how do I". NOT for /help.'
+  short-description: 'Route to the right Phoenix skill'
 ---
 
 # Plugin Help — Interactive Command Advisor

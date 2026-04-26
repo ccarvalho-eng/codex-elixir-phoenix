@@ -1,4 +1,4 @@
 interface:
   display_name: "Quick"
-  short_description: "Implement small Phoenix changes without planning — add validations, update routes, fix components, create migrations. Use for single-file edits under 50 lines."
+  short_description: "Execute small Phoenix changes"
   default_prompt: "Use $elixir-phoenix-quick for this Elixir/Phoenix task."

@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-audit
-description: 'Elixir/Phoenix: Project health audit and health check — architecture,
-  performance, security, tests, dependencies. Use quarterly, before releases, after
-  refactors, or when asked about project health.'
+description: 'Audit project health across architecture, security, performance, tests, and deps.'
 metadata:
-  short-description: 'Elixir/Phoenix: Project health audit and health check — architecture,
-    performance, security, tests, dependencies. Use quarterly, before releases, after
-    refactors, or when asked about project health.'
+  short-description: 'Audit Phoenix project health'
 ---
 
 # Project Health Audit
