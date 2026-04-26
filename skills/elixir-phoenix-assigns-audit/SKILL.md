@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-assigns-audit
-description: 'Elixir/Phoenix: Audit LiveView socket assigns — memory estimates, missing
-  temporary_assigns, unused assigns, unbounded lists needing streams. Use when investigating
-  LiveView memory bloat.'
+description: 'Audit LiveView assigns for memory bloat, dead assigns, and stream candidates.'
 metadata:
-  short-description: 'Elixir/Phoenix: Audit LiveView socket assigns — memory estimates,
-    missing temporary_assigns, unused assigns, unbounded lists needing streams. Use
-    when investigating LiveView memory bloat.'
+  short-description: 'Audit LiveView assigns for memory bloat'
 ---
 
 # LiveView Assigns Audit

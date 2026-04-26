@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-verify
-description: Verify Elixir/Phoenix changes — compile, format, and test in one loop.
-  Use after implementation, before PRs, or after fixing bugs.
+description: 'Compile, format, and test Phoenix changes in one verification loop.'
 metadata:
-  short-description: Verify Elixir/Phoenix changes — compile, format, and test in
-    one loop. Use after implementation, before PRs, or after fixing bugs.
+  short-description: 'Run Phoenix compile-format-test checks'
 ---
 
 # Verification Loop

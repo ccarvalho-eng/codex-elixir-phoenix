@@ -1,4 +1,4 @@
 interface:
   display_name: "Assigns Audit"
-  short_description: "Elixir/Phoenix: Audit LiveView socket assigns — memory estimates, missing temporary_assigns, unused assigns, unbounded lists needing streams. Use when investigating LiveView memory bloat."
+  short_description: "Audit LiveView assigns for memory bloat"
   default_prompt: "Use $elixir-phoenix-assigns-audit for this Elixir/Phoenix task."

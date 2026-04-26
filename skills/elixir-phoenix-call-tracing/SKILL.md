@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-call-tracing
-description: Trace Elixir call trees from entry points via mix xref. Use when debugging
-  data flow, planning signature changes, or understanding how a bug reaches code.
+description: 'Trace Elixir call paths from entry points with `mix xref`.'
 metadata:
-  short-description: Trace Elixir call trees from entry points via mix xref. Use when
-    debugging data flow, planning signature changes, or understanding how a bug reaches
-    code.
+  short-description: 'Trace Elixir call paths with xref'
 ---
 
 # Call Tracing

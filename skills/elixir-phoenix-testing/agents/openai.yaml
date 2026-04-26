@@ -1,4 +1,4 @@
 interface:
   display_name: "Testing"
-  short_description: "Elixir testing patterns — ExUnit, Mox, factories, LiveView test helpers. Use when working on *_test.exs, test/support/, factory files, or fixing test failures."
+  short_description: "Apply Elixir testing patterns"
   default_prompt: "Use $elixir-phoenix-testing for this Elixir/Phoenix task."

@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-permissions
-description: Recommend safe Bash permissions for Elixir mix commands in settings.json.
-  Use when permission prompts slow workflow, "fix permissions", "reduce prompts",
-  "auto-allow mix".
+description: 'Recommend safe `settings.json` command permissions for Elixir workflows.'
 metadata:
-  short-description: Recommend safe Bash permissions for Elixir mix commands in settings.json.
-    Use when permission prompts slow workflow, "fix permissions", "reduce prompts",
-    "auto-allow mix".
+  short-description: 'Recommend Codex command permissions'
 ---
 
 # Permission Analyzer

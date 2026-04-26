@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-perf
-description: Analyze Elixir/Phoenix performance — N+1 queries, assign bloat, ecto
-  optimization, genserver bottlenecks. Use when slowness, timeouts, or high memory
-  reported.
+description: 'Analyze Phoenix slowness, memory, N+1s, and bottlenecks.'
 metadata:
-  short-description: Analyze Elixir/Phoenix performance — N+1 queries, assign bloat,
-    ecto optimization, genserver bottlenecks. Use when slowness, timeouts, or high
-    memory reported.
+  short-description: 'Investigate Phoenix performance issues'
 ---
 
 # Performance Analysis

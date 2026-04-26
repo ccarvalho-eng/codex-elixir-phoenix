@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-brainstorm
-description: Brainstorm Elixir/Phoenix features — explore ideas, compare approaches,
-  gather requirements. Use when vague idea, not sure how to approach, or want to discuss
-  before plan.
+description: 'Brainstorm Phoenix features, tradeoffs, and requirements before planning.'
 metadata:
-  short-description: Brainstorm Elixir/Phoenix features — explore ideas, compare approaches,
-    gather requirements. Use when vague idea, not sure how to approach, or want to
-    discuss before plan.
+  short-description: 'Brainstorm Phoenix features'
 ---
 
 # Brainstorm — Adaptive Requirements Gathering

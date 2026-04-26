@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-document
-description: Write @moduledoc and @doc annotations into Elixir source files. Use ONLY
-  when the user explicitly asks to generate documentation for modules, contexts, or
-  schemas.
+description: 'Write `@moduledoc` and `@doc` only when the user explicitly asks.'
 metadata:
-  short-description: Write @moduledoc and @doc annotations into Elixir source files.
-    Use ONLY when the user explicitly asks to generate documentation for modules,
-    contexts, or schemas.
+  short-description: 'Generate Elixir docs on request'
 ---
 
 # Document

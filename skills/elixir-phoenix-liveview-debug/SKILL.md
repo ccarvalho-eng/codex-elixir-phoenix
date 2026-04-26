@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-liveview-debug
-description: Elixir/Phoenix LiveView debugging workflow — event handling, socket assign
-  lifecycle, stream behavior, reconnect state, and render performance.
+description: 'Debug LiveView events, assigns, reconnects, and render behavior.'
 metadata:
-  short-description: Elixir/Phoenix LiveView debugging workflow — event handling,
-    socket assign lifecycle, stream behavior, reconnect state, and render performance.
+  short-description: 'Debug LiveView lifecycle issues'
 ---
 
 # LiveView Debugging

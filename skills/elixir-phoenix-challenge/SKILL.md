@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-challenge
-description: 'Elixir/Phoenix: Challenge mode reviews - rigorous questioning before
-  approving changes. Use when you want thorough scrutiny of Ecto changes, LiveView
-  events, or PR readiness.'
+description: 'Stress-test Phoenix changes with rigorous review questions before approval.'
 metadata:
-  short-description: 'Elixir/Phoenix: Challenge mode reviews - rigorous questioning
-    before approving changes. Use when you want thorough scrutiny of Ecto changes,
-    LiveView events, or PR readiness.'
+  short-description: 'Challenge Phoenix changes before merge'
 ---
 
 # Challenge Mode Reviews

@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-upgrade
-description: Elixir/Phoenix upgrade workflow — phased dependency upgrades, compatibility
-  checks, deprecation cleanup, and release-safe validation.
+description: 'Plan and execute Phoenix dependency upgrades safely.'
 metadata:
-  short-description: Elixir/Phoenix upgrade workflow — phased dependency upgrades,
-    compatibility checks, deprecation cleanup, and release-safe validation.
+  short-description: 'Plan safe Phoenix upgrades'
 ---
 
 # Upgrade Workflow

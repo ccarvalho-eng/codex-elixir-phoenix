@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-brief
-description: 'Elixir/Phoenix: Interactive briefing of a plan file — explains reasoning,
-  schema decisions, component choices. Use when developers need to understand a plan
-  before approving.'
+description: 'Brief a Phoenix plan so reviewers understand design, schema, and component choices.'
 metadata:
-  short-description: 'Elixir/Phoenix: Interactive briefing of a plan file — explains
-    reasoning, schema decisions, component choices. Use when developers need to understand
-    a plan before approving.'
+  short-description: 'Brief Phoenix implementation plans'
 ---
 
 # Plan Briefing

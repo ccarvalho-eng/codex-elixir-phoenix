@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-observability
-description: Elixir/Phoenix observability setup and review — telemetry events, metrics,
-  traces, structured logs, and alertable service indicators.
+description: 'Set up or review Phoenix telemetry, metrics, traces, logs, and alerts.'
 metadata:
-  short-description: Elixir/Phoenix observability setup and review — telemetry events,
-    metrics, traces, structured logs, and alertable service indicators.
+  short-description: 'Review Phoenix telemetry and alerts'
 ---
 
 # Observability

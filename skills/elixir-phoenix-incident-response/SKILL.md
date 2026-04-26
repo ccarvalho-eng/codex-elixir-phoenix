@@ -1,10 +1,8 @@
 ---
 name: elixir-phoenix-incident-response
-description: Elixir/Phoenix production incident response — triage, stabilization, root-cause
-  narrowing, and safe hotfix execution.
+description: 'Handle Phoenix production incidents: triage, stabilize, narrow root cause, hotfix safely.'
 metadata:
-  short-description: Elixir/Phoenix production incident response — triage, stabilization,
-    root-cause narrowing, and safe hotfix execution.
+  short-description: 'Handle Phoenix production incidents'
 ---
 
 # Incident Response

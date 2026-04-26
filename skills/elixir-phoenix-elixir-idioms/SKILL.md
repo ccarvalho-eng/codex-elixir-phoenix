@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-elixir-idioms
-description: OTP/BEAM patterns and Elixir idioms — GenServer, Supervisor, Task, Registry,
-  pattern matching, with chains, pipes. Use when designing processes or debugging
-  BEAM issues.
+description: 'Apply Elixir and OTP idioms for processes, tasks, registries, and control flow.'
 metadata:
-  short-description: OTP/BEAM patterns and Elixir idioms — GenServer, Supervisor,
-    Task, Registry, pattern matching, with chains, pipes. Use when designing processes
-    or debugging BEAM issues.
+  short-description: 'Apply Elixir and OTP idioms'
 ---
 
 # Elixir Idioms

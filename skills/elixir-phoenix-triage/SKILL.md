@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-triage
-description: 'Elixir/Phoenix: Triage review findings interactively — approve, skip,
-  or prioritize each issue. Use after $elixir-phoenix-review to filter findings before fixing.'
+description: 'Triage review findings after `$elixir-phoenix-review` before fixing.'
 metadata:
-  short-description: 'Elixir/Phoenix: Triage review findings interactively — approve,
-    skip, or prioritize each issue. Use after $elixir-phoenix-review to filter findings before
-    fixing.'
+  short-description: 'Triage Phoenix review findings'
 ---
 
 # Triage — Interactive Review Resolution

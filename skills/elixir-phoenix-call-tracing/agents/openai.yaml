@@ -1,4 +1,4 @@
 interface:
   display_name: "Call Tracing"
-  short_description: "Trace Elixir call trees from entry points via mix xref. Use when debugging data flow, planning signature changes, or understanding how a bug reaches code."
+  short_description: "Trace Elixir call paths with xref"
   default_prompt: "Use $elixir-phoenix-call-tracing for this Elixir/Phoenix task."

@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-intent-detection
-description: 'Elixir/Phoenix: Route ambiguous work requests to the correct `$elixir-phoenix-*`
-  workflow. Use when intent is unclear, mixed (bug + refactor), or user asks "how
-  to approach this".'
+description: 'Route ambiguous Phoenix requests to the right workflow.'
 metadata:
-  short-description: 'Elixir/Phoenix: Route ambiguous work requests to the correct
-    `$elixir-phoenix-*` workflow. Use when intent is unclear, mixed (bug + refactor),
-    or user asks "how to approach this".'
+  short-description: 'Route ambiguous Phoenix requests'
 ---
 
 # Intent Detection — Workflow Routing

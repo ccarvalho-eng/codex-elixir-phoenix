@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-research
-description: Research Elixir/Phoenix topics or evaluate Hex libraries (--library).
-  Use when learning about libraries, patterns, or comparing approaches. Searches HexDocs,
-  ElixirForum, GitHub.
+description: 'Research Phoenix topics or evaluate Hex libraries from primary sources.'
 metadata:
-  short-description: Research Elixir/Phoenix topics or evaluate Hex libraries (--library).
-    Use when learning about libraries, patterns, or comparing approaches. Searches
-    HexDocs, ElixirForum, GitHub.
+  short-description: 'Research Phoenix topics and libraries'
 ---
 
 # Research Elixir Topic

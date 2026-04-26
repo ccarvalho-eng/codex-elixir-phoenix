@@ -1,4 +1,4 @@
 interface:
   display_name: "Document"
-  short_description: "Write @moduledoc and @doc annotations into Elixir source files. Use ONLY when the user explicitly asks to generate documentation for modules, contexts, or schemas."
+  short_description: "Generate Elixir docs on request"
   default_prompt: "Use $elixir-phoenix-document for this Elixir/Phoenix task."

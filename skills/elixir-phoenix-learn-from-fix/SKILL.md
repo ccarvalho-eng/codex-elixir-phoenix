@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-learn-from-fix
-description: 'Elixir/Phoenix: Capture lessons after fixing a bug or receiving a correction
-  — ecto, liveview, oban, iron law mistakes. Use when the user corrects your approach
-  or teaches a pattern.'
+description: 'Capture durable lessons after a Phoenix bug fix or correction.'
 metadata:
-  short-description: 'Elixir/Phoenix: Capture lessons after fixing a bug or receiving
-    a correction — ecto, liveview, oban, iron law mistakes. Use when the user corrects
-    your approach or teaches a pattern.'
+  short-description: 'Capture lessons from Phoenix fixes'
 ---
 
 # Learn From Fix

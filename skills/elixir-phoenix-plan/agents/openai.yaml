@@ -1,4 +1,4 @@
 interface:
   display_name: "Plan"
-  short_description: "Plan multi-step Phoenix features with specialist agents. Use when building new domains, multi-file features, or creating plans from review findings. Use --existing to enhance a plan."
+  short_description: "Plan multi-step Phoenix changes"
   default_prompt: "Use $elixir-phoenix-plan for this Elixir/Phoenix task."

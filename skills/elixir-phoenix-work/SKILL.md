@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-work
-description: Execute Elixir/Phoenix plan tasks with progress tracking. Use after $elixir-phoenix-plan
-  to implement features with mix compile and mix test verification after each step,
-  or --continue to resume interrupted work.
+description: 'Execute a Phoenix plan step by step with progress tracking and verification.'
 metadata:
-  short-description: Execute Elixir/Phoenix plan tasks with progress tracking. Use
-    after $elixir-phoenix-plan to implement features with mix compile and mix test verification
-    after each step, or --continue to resume interrupted work.
+  short-description: 'Execute Phoenix plans with verification'
 ---
 
 # Work

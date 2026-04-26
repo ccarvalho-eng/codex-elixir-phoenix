@@ -1,4 +1,4 @@
 interface:
   display_name: "Work"
-  short_description: "Execute Elixir/Phoenix plan tasks with progress tracking. Use after $elixir-phoenix-plan to implement features with mix compile and mix test verification after each step, or --continue to resume interrupted work."
+  short_description: "Execute Phoenix plans with verification"
   default_prompt: "Use $elixir-phoenix-work for this Elixir/Phoenix task."

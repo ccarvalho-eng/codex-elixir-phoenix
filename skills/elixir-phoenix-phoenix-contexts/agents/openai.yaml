@@ -1,4 +1,4 @@
 interface:
   display_name: "Phoenix Contexts"
-  short_description: "Phoenix context design — creating/splitting contexts, Scope (1.8+), Ecto.Multi, PubSub, routers, plugs, controllers. Use when editing contexts, routers, or designing boundaries."
+  short_description: "Design Phoenix context boundaries"
   default_prompt: "Use $elixir-phoenix-phoenix-contexts for this Elixir/Phoenix task."

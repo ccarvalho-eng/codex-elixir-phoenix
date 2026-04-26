@@ -1,4 +1,4 @@
 interface:
   display_name: "Elixir Idioms"
-  short_description: "OTP/BEAM patterns and Elixir idioms — GenServer, Supervisor, Task, Registry, pattern matching, with chains, pipes. Use when designing processes or debugging BEAM issues."
+  short_description: "Apply Elixir and OTP idioms"
   default_prompt: "Use $elixir-phoenix-elixir-idioms for this Elixir/Phoenix task."

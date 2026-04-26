@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-examples
-description: Provide examples and walkthroughs for Phoenix, LiveView, Ecto, OTP patterns.
-  Use when "how do I...", "show me an example", or "what does X look like".
+description: 'Give Phoenix, LiveView, Ecto, or OTP examples and walkthroughs.'
 metadata:
-  short-description: Provide examples and walkthroughs for Phoenix, LiveView, Ecto,
-    OTP patterns. Use when "how do I...", "show me an example", or "what does X look
-    like".
+  short-description: 'Phoenix and Elixir examples'
 ---
 
 # Examples & Walkthroughs

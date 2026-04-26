@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-tidewave-integration
-description: Tidewave MCP runtime tools — debugging, smoke testing, live state inspection,
-  SQL queries, hex docs. Use when evaluating code in a running Phoenix app.
+description: 'Use Tidewave runtime tools to inspect and smoke-test a running Phoenix app.'
 metadata:
-  short-description: Tidewave MCP runtime tools — debugging, smoke testing, live state
-    inspection, SQL queries, hex docs. Use when evaluating code in a running Phoenix
-    app.
+  short-description: 'Inspect Phoenix runtime with Tidewave'
 ---
 
 # Tidewave MCP Integration

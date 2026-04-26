@@ -1,11 +1,8 @@
 ---
 name: elixir-phoenix-techdebt
-description: Analyze Elixir/Phoenix technical debt — duplicates, refactoring opportunities,
-  credo issues. Use when asked about code quality, cleanup, or what to improve.
+description: 'Assess Phoenix technical debt, duplication, cleanup, and refactor targets.'
 metadata:
-  short-description: Analyze Elixir/Phoenix technical debt — duplicates, refactoring
-    opportunities, credo issues. Use when asked about code quality, cleanup, or what
-    to improve.
+  short-description: 'Audit Phoenix technical debt'
 ---
 
 # Technical Debt Detection

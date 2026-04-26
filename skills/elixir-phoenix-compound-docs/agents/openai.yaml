@@ -1,4 +1,4 @@
 interface:
   display_name: "Compound Docs"
-  short_description: "Searchable Elixir/Phoenix/Ecto solution documentation system with YAML frontmatter. Builds institutional knowledge from solved problems. Use when consulting past solutions before investigating new issues."
+  short_description: "Search Phoenix solution docs"
   default_prompt: "Use $elixir-phoenix-compound-docs for this Elixir/Phoenix task."

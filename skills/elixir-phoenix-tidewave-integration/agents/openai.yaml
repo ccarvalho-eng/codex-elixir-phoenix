@@ -1,4 +1,4 @@
 interface:
   display_name: "Tidewave Integration"
-  short_description: "Tidewave MCP runtime tools — debugging, smoke testing, live state inspection, SQL queries, hex docs. Use when evaluating code in a running Phoenix app."
+  short_description: "Inspect Phoenix runtime with Tidewave"
   default_prompt: "Use $elixir-phoenix-tidewave-integration for this Elixir/Phoenix task."

@@ -1,12 +1,8 @@
 ---
 name: elixir-phoenix-pr-review
-description: Address PR review comments on Elixir/Phoenix code — fetch comments, draft
-  responses, optionally fix code. Use when the user shares a PR URL or mentions reviewer
-  feedback.
+description: 'Handle Phoenix PR review comments: inspect feedback, draft replies, and fix code.'
 metadata:
-  short-description: Address PR review comments on Elixir/Phoenix code — fetch comments,
-    draft responses, optionally fix code. Use when the user shares a PR URL or mentions
-    reviewer feedback.
+  short-description: 'Address Phoenix PR review feedback'
 ---
 
 # PR Review Response

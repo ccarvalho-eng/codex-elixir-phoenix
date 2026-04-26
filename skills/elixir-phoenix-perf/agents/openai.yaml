@@ -1,4 +1,4 @@
 interface:
   display_name: "Perf"
-  short_description: "Analyze Elixir/Phoenix performance — N+1 queries, assign bloat, ecto optimization, genserver bottlenecks. Use when slowness, timeouts, or high memory reported."
+  short_description: "Investigate Phoenix performance issues"
   default_prompt: "Use $elixir-phoenix-perf for this Elixir/Phoenix task."

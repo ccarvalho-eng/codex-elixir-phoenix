@@ -1,14 +1,8 @@
 ---
 name: elixir-phoenix-full
-description: 'Elixir/Phoenix: Use for large features spanning multiple contexts, new
-  domain modules, or when the user wants autonomous end-to-end implementation. Runs
-  the full plan-implement-review-compound cycle with specialist agents and Iron Laws
-  enforcement.'
+description: 'Run the full plan-build-review-compound workflow for large Phoenix work.'
 metadata:
-  short-description: 'Elixir/Phoenix: Use for large features spanning multiple contexts,
-    new domain modules, or when the user wants autonomous end-to-end implementation.
-    Runs the full plan-implement-review-compound cycle with specialist agents and
-    Iron Laws enforcement.'
+  short-description: 'Run the full Phoenix work loop'
 ---
 
 # Full Phoenix Feature Development

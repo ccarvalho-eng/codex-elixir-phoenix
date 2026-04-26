@@ -1,4 +1,4 @@
 interface:
   display_name: "Init"
-  short_description: "Elixir/Phoenix: Initialize plugin in a project — install Iron Laws, auto-activation rules, and reference auto-loading into AGENTS.md. Use when setting up or updating the plugin."
+  short_description: "Set up Phoenix plugin rules"
   default_prompt: "Use $elixir-phoenix-init for this Elixir/Phoenix task."
