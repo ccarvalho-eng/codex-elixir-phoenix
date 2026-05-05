@@ -52,6 +52,7 @@ Map the user's situation to one of these categories:
 | **Quick change** | Single file, <50 lines, "fix typo" | ``$elixir-phoenix-quick`` |
 | **Bug** | Error, stack trace, "broken", "failing" | ``$elixir-phoenix-investigate`` |
 | **Review** | "check", "review", PR ready | ``$elixir-phoenix-review`` |
+| **Runtime durability** | "race", "state machine", "retry semantics", "pause/resume", "restart safety", "durability", "Oban flow" | ``$elixir-phoenix-runtime-durability-review`` |
 | **Performance** | "slow", "N+1", "memory" | ``$elixir-phoenix-perf``, ``$elixir-phoenix-n1-check``, ``$elixir-phoenix-assigns-audit`` |
 | **Research** | "how to", "best practice", "evaluate lib" | ``$elixir-phoenix-research`` |
 | **Resume work** | Existing plan with unchecked tasks | ``$elixir-phoenix-work` --continue` |

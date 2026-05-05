@@ -9,6 +9,7 @@ This repository packages custom skills from a local Codex setup so they can be i
 - Elixir/Phoenix skills under [`skills/`](skills/)
 - Skill definitions in `SKILL.md`
 - Related `agents/` and `references/` folders when present
+- Runtime durability review coverage for state-machine, persistence, retry, pause/resume, and restart-sensitive changes
 
 ## Not Included
 
